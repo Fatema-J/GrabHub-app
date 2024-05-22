@@ -18,10 +18,14 @@ Step into our culinary adventure with our innovative Food Delivery app! Seamless
 ### ***Design Phase***
 
 #### Entity-Relationship Diagram (ERD):
-![ERD](./images/erd.png)
+![ERD](./images/erd.drawio.png)
 
 #### Wireframes:
-![Wireframes](./images/wireframes.png)
+![Wireframes](./images/appUI.drawio.png)
+
+#### Managment of The Workflow
+![Workflow](./images/sprint2.png)
+
 
 ___
 
@@ -45,6 +49,13 @@ ___
 
 ### ***Get Started***
 
+The Wire Frame below will guide you on how you will be redirected through our app including from all the features included:
+
+1. Navigate to the app URL, you shall view a welcome page with restaurants list. P.S: You can view restaurants only (Not order) when not logged in.
+2. Upon login, you will be redirected to the restaurant of your choice, view and order select from the categorized menu dishes.
+3. Picked dish picture will be displayed on the right side of  the page.
+4. click on "Order Now" button to move your "Yummy" meal to the basket!
+5. Review your order details and payment summary & "Proceed with Payment"
 
 ___
 ### ***Features***

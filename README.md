@@ -3,7 +3,7 @@
 ## Date : 09/05/2024
 
 
-### ![alt text].(https://i.pinimg.com/originals/e0/58/ee/e058eecc0652ff38a4e7062cfcf08c9d.gif)
+### (![alt text](image.png))
 ***
 
 ### ***About the project***

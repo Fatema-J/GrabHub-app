@@ -10,28 +10,16 @@ const dishSchema = new Schema ({
   category: {
     type: String,
     required: true
-  }
+  },
+  description: String,
+  price: Number
 })
 
-const movieSchema = new Schema({
-  title: { type: String, required: true },
-  releaseYear: {
-    type: Number,
-    default: function() {
-      return new Date().getFullYear();
-    },
-    min: 1927
-  },
-  mpaaRating: {
-    type: String,
-    enum: ['G', 'PG', 'PG-13', 'R']
-  },
-  cast: [{ type: Schema.Types.ObjectId, ref: 'Performer' }],
-  nowShowing: { type: Boolean, default: true },
-  reviews: [reviewSchema]
-}, {
-  timestamps: true
-});
+const restaurantSchema = new Schema({
+  name: String,
+  location: String,
+  menu: [dishSchema]
+})
 
 // Compile the schema into a model and export it
-module.exports = mongoose.model('Movie', movieSchema);
+module.exports = mongoose.model('Restaurant', restaurantSchema);

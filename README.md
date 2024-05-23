@@ -24,7 +24,7 @@ Step into our culinary adventure with our innovative Food Delivery app! Seamless
 
 #### Entity-Relationship Diagram (ERD):
 
-![ERD](./images/erd2.drawio.png)
+![ERD](./images/erd4.drawio.png)
 
 #### Wireframes:
 

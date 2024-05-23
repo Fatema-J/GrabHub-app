@@ -66,7 +66,7 @@ ___
 - [ ] Multi orders from different restaurants at same time
 - [ ] optional comments before confirm order
 - [ ] App contains basket and payment page
-- [ ] the app have order tracking map
+- [ ] the app will have order tracking map
 
 
 ___

@@ -24,11 +24,16 @@ Step into our culinary adventure with our innovative Food Delivery app! Seamless
 
 #### Entity-Relationship Diagram (ERD):
 
-![ERD](./images/erd.png)
+![ERD](./images/erd2.drawio.png)
 
 #### Wireframes:
 
-![Wireframes](./images/wireframes.png)
+![Wireframes](./images/appUI.drawio.png)
+
+#### Managment of The Workflow
+
+[See it Here](https://trello.com/b/TRVA5v78/project)
+![Workflow](./images/sprint2.png)
 
 ---
 
@@ -47,19 +52,13 @@ Step into our culinary adventure with our innovative Food Delivery app! Seamless
 
 **_Diagramming and Visualization:_**
 
-- **_draw.io:_** Leveraged during the design phase to create wireframes and Entity-Relationship Diagrams (ERD), providing a visual blueprint for our project.
+The Wire Frame below will guide you on how you will be redirected through our app including from all the features included:
 
-**_Deployment and Hosting:_**
-
-- **_Fly.io:_** The platform we relied on for deploying and scaling our application globally, ensuring optimal performance and accessibility.
-
----
-
-### **_Get Started_**
-
----
-
-### **_Features_**
+1. Navigate to the app URL, you shall view a welcome page with restaurants list. P.S: You can view restaurants only (Not order) when not logged in.
+2. Upon login, you will be redirected to the restaurant of your choice, view and order select from the categorized menu dishes.
+3. Picked dish picture will be displayed on the right side of the page.
+4. click on "Order Now" button to move your "Yummy" meal to the basket!
+5. Review your order details and payment summary & "Proceed with Payment"
 
 - [ ] Local time shown in first page
 - [ ] List of restaurants
@@ -76,6 +75,7 @@ Step into our culinary adventure with our innovative Food Delivery app! Seamless
 - [ ] Branding (Logo, Colors, Fonts)
 - [ ] APIs
 - [ ] Additional Toppings
+- [ ] the app will have order tracking map
 
 ---
 

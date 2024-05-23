@@ -3,7 +3,7 @@
 ## Date : 09/05/2024
 
 
-### (![alt text](image.png))
+### ![alt text](image.png)
 ***
 
 ### ***About the project***

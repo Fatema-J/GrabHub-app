@@ -66,7 +66,7 @@ ___
 - [ ] Multi orders from different restaurants at same time
 - [ ] optional comments before confirm order
 - [ ] App contains basket and payment page
-- [ ] the app will have order tracking map
+      
 
 
 ___
@@ -75,6 +75,7 @@ ___
 - [ ] Branding (Logo, Colors, Fonts)
 - [ ] APIs
 - [ ] Additional Toppings
+- [ ] the app will have order tracking map
 
 ___
 ### ***Credits***

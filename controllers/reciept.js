@@ -1,4 +1,4 @@
-const reciept = require('../')
+const reciept = require('../models/reciept')
 
 module.exports = {
   

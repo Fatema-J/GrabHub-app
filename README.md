@@ -4,7 +4,12 @@
 ### Group Members:
 Fatema Aljonaid | Abeer Majeed | Ghazi Muqbel | Sara Alalawi
 
+<<<<<<< HEAD
+
+### ![alt text](image.png)
+=======
 ### ![alt text](./images/image.png)
+>>>>>>> a95ecec71858ec8cb6c0092c90ca2e6a01b295ab
 ***
 
 

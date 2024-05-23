@@ -3,5 +3,5 @@ const router = express.router();
 
 router.get('/', function(req, res, next) {
   res.redirect('/');
-});
+});''
 

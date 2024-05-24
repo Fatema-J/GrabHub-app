@@ -6,10 +6,6 @@
 
 Fatema Aljonaid | Abeer Majeed | Ghazi Muqbel | Sara Alalawi
 
-### ![alt text](image.png)
-
-=======
-
 ### ![alt text](./images/image.png)
 
 ---

@@ -1,17 +1,22 @@
-const reciept = require('../models/reciept') 
-const dish = require('../models/dish')
-const addtoDB = async(req, res) => {
-try{
-const dish = await Dish.findById(req.params.id);
-reciept.resturant.push(req.body.performerId);
-await reciept.save()
-res.redirect(`/reciept/${reciept._id}`);
-} catch(error){
-  console.log(error);
-    res.redirect('/reciept');
+const reciept = require('../models/reciept')
+
+async function index(req, res) {
+  console.log(req.user)
+  const reciepts = await reciept.find({})
+  res.render('reciepts/index', { title: 'All reciepts', reciepts })
 }
+
+const show = async (req, res) => {
+  try {
+    const reciept = await reciept.findById(req.params.id)
+    res.redirect(`/reciept/${reciept._id}`)
+  } catch (i) {
+    console.error(err)
+    res.redirect('/reciept/')
+  }
 }
 
 module.exports = {
-  addtoDB
+  index,
+  show
 }

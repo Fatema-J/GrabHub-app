@@ -2,10 +2,10 @@ const Basket = require('../models/basket')
 modeule.exports = {
   show,
   add,
-  deleteBasket,
-  updateBasket
+  delete: deleteBasket,
+  update: updateBasket
 }
-// add to basket
+// add from ordered items to basket, +if statement
 async function add(req, res) {
   const basket = await Basket.find({})
   res.render('basket/add', {
@@ -13,10 +13,10 @@ async function add(req, res) {
     basket
   })
 }
-//delete
+//delete, +if statement
 async function deleteBasket(req, res) {
   try {
-    await Basket.findByIdAndDeleter(req.params.id)
+    await Basket.findById(req.params.id)
     res.render('basket/deleteBasket')
   } catch (err) {
     console.log(err)
@@ -33,11 +33,8 @@ async function show(req, res) {
   })
 }
 
-// update the basket
+// update the basket, +if statement
 async function updateBasket(req, res) {
   const basket = await Basket.find({})
-  res.render('basket/updatedBasket', {
-    title: 'Basket',
-    basket
-  })
+  res.render('basket/updatedBasket')
 }

@@ -9,19 +9,19 @@ const Restaurant = require('./models/restaurant');
 const dishSchema = {
   breakfast: [
     {
-      name: 'Egg Ramen',
+      Item: 'Egg Ramen',
       category: 'Breakfast',
       description: ' Japanese soft-boiled egg marinated with Ramen',
       price: 10.99
     },
     {
-      name: 'Pancakes with Maple Syrup',
+      Item: 'Pancakes with Maple Syrup',
       category: 'Breakfast',
       description: 'Fluffy pancakes served with maple syrup and butter',
       price: 8.99
     },
     {
-      name: 'Vegetarian Omelette',
+      Item: 'Vegetarian Omelette',
       category: 'Breakfast',
       description: 'Omelette filled with vegetables and cheese, served with toast',
       price: 9.99
@@ -29,19 +29,19 @@ const dishSchema = {
   ],
   lunch: [
     {
-      name: 'Chicken Caesar Salad',
+      Item: 'Chicken Caesar Salad',
       category: 'Lunch',
       description: 'Fresh romaine lettuce topped with grilled chicken, croutons, parmesan cheese, and Caesar dressing',
       price: 12.99
     },
     {
-      name: 'Grilled Vegetable Panini',
+      Item: 'Grilled Vegetable Panini',
       category: 'Lunch',
       description: 'Grilled vegetables with pesto and mozzarella cheese on ciabatta bread',
       price: 11.99
     },
     {
-      name: 'Fish Tacos',
+      Item: 'Fish Tacos',
       category: 'Lunch',
       description: 'Grilled fish tacos with cabbage slaw, avocado, and chipotle mayo',
       price: 14.99
@@ -49,19 +49,19 @@ const dishSchema = {
   ],
   dinner: [
     {
-        name: 'Shrimp Scampi Pasta',
+        Item: 'Shrimp Scampi Pasta',
         category: 'Dinner',
         description: 'Pasta tossed with garlic, white wine, lemon juice, parsley, and shrimp',
         price: 18.99
       },
     {
-      name: 'Filet Mignon',
+      Item: 'Filet Mignon',
       category: 'Dinner',
       description: 'Tender filet mignon steak served with mashed potatoes and steamed vegetables',
       price: 29.99
     },
     {
-      name: 'Vegetable Curry',
+      Item: 'Vegetable Curry',
       category: 'Dinner',
       description: 'Assorted vegetables cooked in a flavorful curry sauce, served with rice',
       price: 16.99
@@ -103,3 +103,4 @@ const seedRestaurants = async () => {
 
 // Call the function to seed restaurants
 seedRestaurants();
+

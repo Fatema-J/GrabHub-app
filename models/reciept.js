@@ -3,12 +3,14 @@ const Schema = mongoose.Schema;
 
 const recieptSchema = new Schema({
   name: {
-    type: String,
+    type: {type: string , price:number},
     required: true,
-    unique: true
+    unique: true,
+    amount: number
   }
+  
 }, {
   timestamps: true
 });
 
-module.exports = mongoose.model('reciept', recieptSchema);
+module.exports = mongoose.model('Reciept', recieptSchema);

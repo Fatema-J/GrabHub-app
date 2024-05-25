@@ -1,5 +1,10 @@
 const Basket = require('../models/basket')
-
+module.exports = {
+  show,
+  add,
+  delete: deleteBasket,
+  update: updateBasket
+}
 // add from ordered items to basket, +if statement
 // async function add(req, res) {
 //   const basket = await Basket.find({})

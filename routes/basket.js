@@ -4,9 +4,9 @@ const basketCtrl = require('../controllers/basket')
 
 router.get('/basket', basketCtrl.show)
 //
-router.update('/basket/:basketId/itemId', basketCtrl.update)
+router.post('/basket/:basketId/itemId', basketCtrl.update)
 router.delete('/basket', basketCtrl.delete)
 // should be create?
-// router.add('/', basketCtrl.add)
+router.post('/', basketCtrl.add)
 
 module.exports = router

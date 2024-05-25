@@ -4,6 +4,7 @@ const { ObjectId } = mongodb
 
 const index = async (req, res) => {
   const restaurants = await Restaurant.find({})
+
   res.render('restaurants/index', { title: 'All Restaurants', restaurants })
 }
 
@@ -14,7 +15,7 @@ const show = async (req, res) => {
   //keep distinct categories only
   const categories = Array.from(new Set(allCategories))
   console.log('categories', categories)
-
+  const dishes = restaurant.menu
   console.log(restaurant.menu);
   
 

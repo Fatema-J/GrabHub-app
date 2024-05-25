@@ -4,17 +4,18 @@ const Schema = mongoose.Schema
 // embedded oredered items
 
 const orderedItemSchema = new Schema({
-  orderedItem: {
-    type: String,
-    required: true
+  comments: {
+    type: String
   },
-  price: {
+  quantity: {
     type: Number,
     required: true
-  }
+  },
+  dish: { type: Schema.Types.ObjectId, ref: 'Dish' }
 })
-// create basket, ebeded ordered item in basket
-const basketSchema = new schema({
+
+// create basket, embeded ordered item in basket
+const basketSchema = new Schema({
   user: { type: Schema.Types.ObjectId, ref: 'User' },
   orderedItems: [orderedItemSchema]
 })

@@ -11,11 +11,12 @@ const show = async (req, res) => {
   const restaurant = await Restaurant.findById(req.params.id)
 
   const allCategories = restaurant.menu.map((dish) => dish.category)
-  //keep distinct categories only. 
-  //source: https://www.geeksforgeeks.org/how-to-get-all-unique-values-remove-duplicates-in-a-javascript-array/
+  //keep distinct categories only
   const categories = Array.from(new Set(allCategories))
-
   console.log('categories', categories)
+
+  console.log(restaurant.menu);
+  
 
   res.render('restaurants/show', { title: restaurant.name, restaurant, categories })
 }

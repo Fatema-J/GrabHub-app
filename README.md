@@ -62,7 +62,7 @@ ___
 ### ***Features***
 - [ ] Local time shown in first page
 - [ ] List of restaurants
-- [ ] Each restaurant page contains menu and categories
+- [X] Each restaurant page contains menu and categories
 - [ ] Multi orders from different restaurants at same time
 - [ ] optional comments before confirm order
 - [ ] App contains basket and payment page

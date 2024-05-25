@@ -1,5 +1,5 @@
 const Basket = require('../models/basket')
-modeule.exports = {
+module.exports = {
   show,
   add,
   delete: deleteBasket,

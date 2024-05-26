@@ -1,20 +1,20 @@
 <%- include('../partials/header')%>
 
 <!-- <div class="categories">
-  <% categories.forEach(category =>{%>
+  <%// categories.forEach(category =>{%>
       <button>
-        <%= category %>
+        <%= //category %>
       </button>
-  <%}) %>
+  <%//}) %>
 </div> -->
 
 <div class="dishes">
-  <% if(dishes){ %>
-    <% dishes.forEach(dish =>{%>
+  <% if(restaurantMenu){ %>
+    <% restaurantMenu.forEach(dish =>{%>
       <img src="" alt="">
-      <h3><%=dish.name%></h3>
+      <h3><%=dish.Item%></h3>
       <p>Price: <span><%=dish.price%></span></p>
-      <p>Description <span>dish.Description</span></p>
+      <p>Description <span>dish.description</span></p>
   <%}) %>
     <% } %>
 </div>

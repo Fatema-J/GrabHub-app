@@ -3,23 +3,6 @@ const Dish = require('../models/dish')
 const mongodb = require('mongodb')
 const { ObjectId } = mongodb
 
-const showDish = async (req, res) => {
-  try {
-    const restaurantId = req.params.id
-    const restaurant = await Restaurant.findById(restaurantId)
-      .populate('menu')
-      .exec()
-
-    if (!restaurant) {
-      return res.status(404).json({ message: 'Restaurant not found' })
-    }
-
-    res.json(restaurant.menu) // Return the populated menu
-  } catch (err) {
-    res.status(500)
-  }
-}
-
 const index = async (req, res) => {
   const restaurants = await Restaurant.find({})
 
@@ -56,6 +39,5 @@ const show = async (req, res) => {
 
 module.exports = {
   index,
-  show,
-  showDish
+  show
 }

@@ -15,6 +15,10 @@
       <h3><%=dish.Item%></h3>
       <p>Price: <span><%=dish.price%></span></p>
       <p>Description <span>dish.description</span></p>
+      <form id="add-dish-quantity" action="/basket/<%=basket._id%>/ordered-item" method="POST">
+        <input type="number" name="addDish" value=`${dish._id}` min="0">
+        <button type="submit">Add</button>
+      </form>
   <%}) %>
     <% } %>
 </div>

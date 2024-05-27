@@ -35,6 +35,8 @@ async function show(req, res) {
 
 // update the basket, +if statement
 async function updateBasket(req, res) {
+  const user = await User.findById('66542dcde9c6c5b6fea3d99f')
+  console.log(user)
   const basket = await Basket.find({})
   res.render('basket/updatedBasket')
 }

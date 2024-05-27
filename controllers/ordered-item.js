@@ -14,6 +14,12 @@ async function create(req, res) {
   }
 }
 
+// function addItem(req, res) {
+//   res.render('baskets/show', { title: '+', errorMsg: '' })
+//   console.log('added')
+// }
+
 module.exports = {
   create
+  // addItem
 }

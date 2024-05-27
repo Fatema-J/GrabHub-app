@@ -8,7 +8,7 @@ const userSchema = new Schema({
 }, {
   timestamps:true
 })
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('dish', userSchema);
 const dishSchema = new Schema ({
   Item: {
     type: String,
@@ -27,7 +27,7 @@ const dishSchema = new Schema ({
 const restaurantSchema = new Schema({
   name: String,
   location: String,
-  menu: [{ type: Schema.Types.ObjectId, ref: 'Dish' }]
+  menu: [{ type: Schema.Types.ObjectId, ref: 'Dishes' }]
 })
 
 // Compile the schema into a model and export it

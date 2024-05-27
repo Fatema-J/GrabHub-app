@@ -20,23 +20,22 @@
   <div><%=  basketdish.price%></div>
 
   <div class="details">quantity:</div>
-  <div ><%= baskets.orderedItems[0].quantity%></div>
+  <% baskets.orderedItems.forEach(item=>{ %>
+  <div ><%=item.quantity%></div>
+
     <div class="details">comments:</div>
-  <div><%= baskets.orderedItems[0].comments%></div>
-
-
-
-
-
+  <div><%= item.comments%></div>
 
       <input type="submit" value="+" />
       <input type="submit" value="-" />
+      <% }) %>
 </section>
 
 <h3>Total price:</h3>
 <!-- 
 orderedItems price and total payment  -->
+  </div>
+  </body>
   <% } else { %> 
     <p>Please sign in to view your basket</p> <% } %>
-  </body>
 </html>

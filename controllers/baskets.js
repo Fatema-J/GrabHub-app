@@ -26,6 +26,12 @@ const show = async (req, res) => {
     console.log(baskets.orderedItems)
 
     const basketdish = []
+    //totalamount
+    let totalAmount = 0
+    baskets.orderedItems.forEach((item) => {
+      basketdish.push(item.dish)
+      totalAmount += item.dish.price * item.quantity
+    })
 
     baskets.orderedItems.forEach(async (item) => {
       console.log(item.dish)
@@ -38,7 +44,8 @@ const show = async (req, res) => {
     res.render('baskets/show', {
       title: 'Basket',
       baskets,
-      basketdish
+      basketdish,
+      totalAmount
     })
   } catch (err) {
     console.log(err)

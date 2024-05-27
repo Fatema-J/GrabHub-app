@@ -19,6 +19,7 @@ const restaurantSchema = new Schema({
   name: String,
   location: String,
   menu: [{ type: Schema.Types.ObjectId, ref: 'Dish' }]
+
 })
 
 // Compile the schema into a model and export it

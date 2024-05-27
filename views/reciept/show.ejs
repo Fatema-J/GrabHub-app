@@ -2,7 +2,7 @@
  
 <p><strong>reciept ID:</strong> <%=reciept._id %></p>
 <p><strong>Total Amount:</strong> <%=reciept.totalAmount %></p>
-<h2>Ordered Dishes:</h2>
+<h2>Ordered dishes:</h2>
 <ul>
     <%reciept.orderedDishes.forEach(dish => { %>
         <li>Name: <%= dish.name %>, Price: <%= dish.price %>, Quantity: <%= dish.quantity %></li>

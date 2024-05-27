@@ -11,5 +11,9 @@ const recieptSchema = new Schema(
     timestamps: true
   }
 )
+const Reciept = mongoose.model('Reciept', recieptSchema);
 
-module.exports = mongoose.model('Reciept', recieptSchema)
+module.exports = {
+  Reciept,
+  recieptSchema
+};

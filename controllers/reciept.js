@@ -17,7 +17,26 @@ const show = async (req, res) => {
   }
 }
 
+
+
+const newReciept = async (req, res) => {
+  try {
+    const orderedDishes = req.body;
+    const totalAmount = req.body;
+    const newOrder = new Receipt({
+      orderedDishes,
+      totalAmount,
+    })
+    await newOrder.save();
+
+  }catch (i) {
+    console.error(i)
+    res.redirect('/reciept/')
+  }
+}
+
 module.exports = {
   index,
-  show
+  show,
+  newReciept
 }

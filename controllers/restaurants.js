@@ -32,7 +32,7 @@ const index = async (req, res) => {
 const show = async (req, res) => {
   const restaurant = await Restaurant.findById(req.params.id).populate('menu')
 
-  const dishes = await Dish.find({});
+  const dishes = await Dish.find({})
 
   const restaurantMenu = restaurant.menu;
   const user = await User.findById('66542dcde9c6c5b6fea3d99f').populate('basket')
@@ -63,6 +63,5 @@ const show = async (req, res) => {
 
 module.exports = {
   index,
-  show,
-  showDish
+  show
 }

@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-
 const basketCtrl = require('../controllers/baskets')
+
 router.get('/', basketCtrl.show)
 //
 // router.post('/basket:basketId/itemId', basketCtrl.update)

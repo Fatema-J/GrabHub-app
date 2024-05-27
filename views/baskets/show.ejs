@@ -4,23 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+    <h2>Basket</h2>
     <h3>Order Details</h3>
+    
+<section>
+  <div class="details">dish details:</div>
+    <div><%= basketdish.Item  %></div>
+    <div class="details">category:</div>
+  <div><%=  basketdish.category%></div>
+  <div class="details">price:</div>
+  <div><%=  basketdish.price%></div>
 
-    <% baskets.forEach(basket => {%>
-    <div>
-      <a href="/baskets/<%= basket._id %>"> <%=basket.name%> </a>
-    </div>
+  <div class="details">quantity:</div>
+  <div ><%= baskets.orderedItems[0].quantity%></div>
+    <div class="details">comments:</div>
+  <div><%= baskets.orderedItems[0].comments%></div>
 
-    <%}); %>
-    <div>
-      <% if (baskets.length) { %> <%
-      baskets.orderedItems.forEach(function(orderedItem){ %>
 
-      <p>dish: <span><%= orderedItems.dish %></span></p>
-      <p>quantity: <span><%= orderedItems.quantity %></span></p>
-      //orderedItems price and total payment <% }) %> <% } %>
-    </div>
+
+
+
+
+      <input type="submit" value="+" />
+      <input type="submit" value="-" />
+</section>
+
+<h3>Total price:</h3>
+<!-- 
+orderedItems price and total payment  -->
+  </div>
   </body>
 </html>

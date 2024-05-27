@@ -1,15 +1,5 @@
-
-<%- include('../partials/header')%>
-
-
-<% restaurants.forEach(restaurant => {%>
-  <div class="restaurants">
-    <a href="/restaurants/<%= restaurant._id %>">
-      <%=restaurant.name%>
-    </a>
-  </div>
-<%}); %>
-
-
-
-<%- include('../partials/footer')%>
+<%- include('../partials/header')%> <% restaurants.forEach(restaurant => {%>
+<div class="restaurants">
+  <a href="/restaurants/<%= restaurant._id %>"> <%=restaurant.name%> </a>
+</div>
+<%}); %> <%- include('../partials/footer')%>

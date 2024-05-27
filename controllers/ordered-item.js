@@ -22,6 +22,7 @@ const create = async  (req, res) => {
     console.error(err)
   }
 }
+
 module.exports = {
   create
 }

@@ -1,6 +1,5 @@
 <%- include('../partials/header')%>
 
-
 <!-- <div class="categories">
   <%// categories.forEach(category =>{%>
       <button>
@@ -10,15 +9,12 @@
 </div> -->
 
 <div class="dishes">
-  <% if(restaurantMenu){ %>
-    <% restaurantMenu.forEach(dish =>{%>
-      <img src="" alt="">
-      <h3><%=dish.Item%></h3>
-      <p>Price: <span><%=dish.price%></span></p>
-      <p>Description <span>dish.description</span></p>
-  <%}) %>
-    <% } %>
-
+  <% if(restaurantMenu){ %> <% restaurantMenu.forEach(dish =>{%>
+  <img src="" alt="" />
+  <h3><%=dish.Item%></h3>
+  <p>Price: <span><%=dish.price%></span></p>
+  <p>Description <span>dish.description</span></p>
+  <%}) %> <% } %>
 </div>
 
 <%- include('../partials/footer')%>

@@ -1,18 +1,5 @@
 const Basket = require('../models/basket')
-module.exports = {
-  show,
-  add,
-  delete: deleteBasket,
-  update: updateBasket
-}
-// add from ordered items to basket, +if statement
-// async function add(req, res) {
-//   const basket = await Basket.find({})
-//   res.render('basket/add', {
-//     title: 'Basket',
-//     basket
-//   })
-// }
+
 const add = async (req, res) => {
   const basket = await Basket.find({})
   res.render('basket/add'),
@@ -29,30 +16,24 @@ async function deleteBasket(req, res) {
     res.render('basket/deleteBasket')
   } catch (err) {
     console.log(err)
-    res.status(500).send('Error delete basket')
   }
 }
 
-// to see the ordered items in the basket
-// async function show(req, res) {
-//   const basket = await Basket.find({})
-//   res.render('basket/show', {
-//     title: 'Basket',
-//     basket
-//   })
-// }
 const show = async (req, res) => {
-  const basket = await Basket.find({})
-  res.render('baskets/show'),
-    {
+  try {
+    const baskets = await Basket.find({})
+    res.render('baskets/show', {
       title: 'Basket',
-      basket
-    }
+      baskets
+    })
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 // update the basket, +if statement
 async function updateBasket(req, res) {
-  const basket = await Basket.find({})
+  const basket = await Basket.findById({})
   res.render('basket/updatedBasket')
 }
 module.exports = {

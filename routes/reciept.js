@@ -1,7 +1,9 @@
-const express = require('express');
-const router = express.router();
+var express = require('express');
+var router = express.Router();
+const recieptCtrl = require('../controllers/reciept');
 
-router.get('/', function(req, res, next) {
-  res.redirect('/');
-});''
+router.get('/', recieptCtrl.index);
+router.get('/', recieptCtrl.show)
+
+module.exports = router;
 

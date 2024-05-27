@@ -1,24 +1,11 @@
-<%- include('../partials/header')%>
-
-
-<% restaurants.forEach(restaurant => {%>
-  <div class="restaurants">
-    <a href="/restaurants/<%= restaurant._id %>">
-      <%=restaurant.name%>
-    </a>
-  </div>
+<%- include('../partials/header')%> <% restaurants.forEach(restaurant => {%>
+<div class="restaurants">
+  <a href="/restaurants/<%= restaurant._id %>"> <%=restaurant.name%> </a>
+</div>
 
 <%}); %>
 
-<div class="dishes">
-  <% if(dishes){ %>
-    <% dishes.forEach(dish =>{%>
-      <img src="" alt="">
-      <h3><%=dish.name%></h3>
-      <p>Price: <span><%=dish.price%></span></p>
-      <p>Description <span>dish.Description</span></p>
-  <%}) %>
-    <% } %>
+
 </div>
 
 <%- include('../partials/footer')%>

@@ -9,12 +9,23 @@
 </div> -->
 
 <div class="dishes">
-  <% if(restaurantMenu){ %> <% restaurantMenu.forEach(dish =>{%>
-  <img src="" alt="" />
-  <h3><%=dish.Item%></h3>
-  <p>Price: <span><%=dish.price%></span></p>
-  <p>Description <span>dish.description</span></p>
-  <%}) %> <% } %>
+  <% if(restaurantMenu){ %>
+    <% restaurantMenu.forEach(dish =>{%>
+      <img src="" alt="">
+      <h3><%=dish.Item%></h3>
+      <p>Price: <span><%=dish.price%></span></p>
+      <p>Description <span>dish.description</span></p>
+      <% if(basket){ %>
+      <form id="add-dish-quantity" action="/baskets/<%=basket._id%>/ordered-item" method="POST">
+        <input type="hidden" name="dish" value="<%= dish._id %>">
+        <input type="number" name="quantity" value="1" min="0">
+        <!-- `${dish._id}` -->
+        <button type="submit">Add</button>
+      </form>
+    <%}
+    }) %>
+    <% } %>
+
 </div>
 
 <%- include('../partials/footer')%>

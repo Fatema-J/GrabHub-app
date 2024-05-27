@@ -24,7 +24,16 @@ const show = async (req, res) => {
   try {
     const baskets = await Basket.findById('6654314fe9c6c5b6fea3d9a1')
     console.log(baskets.orderedItems)
-    const basketdish = await Dish.findById(baskets.orderedItems[0].dish)
+
+    const basketdish = []
+
+    baskets.orderedItems.forEach(async (item) => {
+      console.log(item.dish)
+      basketdish.push(await Dish.findById(item.dish))
+    })
+
+    //await Dish.findById(baskets.orderedItems[0].dish)
+    console.log('=============================')
     console.log(basketdish)
     res.render('baskets/show', {
       title: 'Basket',

@@ -1,20 +1,20 @@
 <%- include('../partials/header')%>
 
 
-<% restaurants.forEach(restaurant => {%>
-  <div class="restaurants">
-    <a href="/restaurants/<%= restaurant._id %>">
-      <%=restaurant.name%>
+<% reciept.forEach(reciept => {%>
+  <div class="reciept">
+    <a href="/reciept/<%= reciept_id %>">
+      <%=reciept.name%>
     </a>
   </div>
 <%}); %>
 
 <h1><%= title %></h1>
-<p><strong>Receipt ID:</strong> <%= receipt._id %></p>
-<p><strong>Total Amount:</strong> <%= receipt.totalAmount %></p>
+<p><strong>reciept ID:</strong> <%=reciept._id %></p>
+<p><strong>Total Amount:</strong> <%=reciept.totalAmount %></p>
 <h2>Ordered Dishes:</h2>
 <ul>
-    <% receipt.orderedDishes.forEach(dish => { %>
+    <%reciept.orderedDishes.forEach(dish => { %>
         <li>Name: <%= dish.name %>, Price: <%= dish.price %>, Quantity: <%= dish.quantity %></li>
     <% }); %>
 </ul>

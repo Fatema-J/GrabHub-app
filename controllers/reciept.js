@@ -3,7 +3,7 @@ const reciept = require('../models/reciept')
 async function index(req, res) {
   console.log(req.user)
   const reciepts = await reciept.find({})
-  res.render('reciepts/index', { title: 'All reciepts', reciepts })
+  res.render('reciept/index', { title: 'All reciepts', reciepts })
 }
 
 const show = async (req, res) => {

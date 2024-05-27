@@ -14,6 +14,9 @@ const add = async (req, res) => {
 async function deleteBasket(req, res) {
   try {
     await Basket.findById(req.params.id)
+
+    // clear ordered items only
+
     res.render('basket/deleteBasket')
   } catch (err) {
     console.log(err)
@@ -25,22 +28,17 @@ const show = async (req, res) => {
     const baskets = await Basket.findById('6654314fe9c6c5b6fea3d9a1')
     console.log(baskets.orderedItems)
 
-    const basketdish = []
-    //totalamount
-    let totalAmount = 0
-    baskets.orderedItems.forEach((item) => {
-      basketdish.push(item.dish)
-      totalAmount += item.dish.price * item.quantity
-    })
+    // Use Promise.all to wait for all promises to resolve
+    //it returned an array of promises before using it
+    // source: https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop
+    const basketdish = await Promise.all(
+      baskets.orderedItems.map(async (item) => {
+        return await Dish.findById(item.dish)
+      })
+    )
 
-    baskets.orderedItems.forEach(async (item) => {
-      console.log(item.dish)
-      basketdish.push(await Dish.findById(item.dish))
-    })
-
-    //await Dish.findById(baskets.orderedItems[0].dish)
-    console.log('=============================')
     console.log(basketdish)
+
     res.render('baskets/show', {
       title: 'Basket',
       baskets,

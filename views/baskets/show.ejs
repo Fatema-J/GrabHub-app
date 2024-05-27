@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Order Details</h3>
+
+    <% baskets.forEach(basket => {%>
+    <div>
+      <a href="/baskets/<%= basket._id %>"> <%=basket.name%> </a>
+    </div>
+
+    <%}); %>
+    <div>
+      <% if (baskets.length) { %> <%
+      baskets.orderedItems.forEach(function(orderedItem){ %>
+
+      <p>dish: <span><%= orderedItems.dish %></span></p>
+      <p>quantity: <span><%= orderedItems.quantity %></span></p>
+      //orderedItems price and total payment <% }) %> <% } %>
+    </div>
+  </body>
+</html>

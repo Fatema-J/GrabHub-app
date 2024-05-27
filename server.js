@@ -13,7 +13,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
 var restaurantsRouter = require('./routes/restaurants')
-var basketRouter = require('./routes/basket')
+var basketsRouter = require('./routes/baskets')
 const orderedItemsRouter = require('./routes/ordered-item')
 
 var app = express()
@@ -43,7 +43,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 app.use('/restaurants', restaurantsRouter)
-app.use('/basket', basketRouter)
+app.use('/baskets', basketsRouter)
 app.use('/', orderedItemsRouter)
 
 // catch 404 and forward to error handler

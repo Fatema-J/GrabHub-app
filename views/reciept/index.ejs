@@ -1,0 +1,23 @@
+<%- include('../partials/header')%>
+
+
+<% restaurants.forEach(restaurant => {%>
+  <div class="restaurants">
+    <a href="/restaurants/<%= restaurant._id %>">
+      <%=restaurant.name%>
+    </a>
+  </div>
+<%}); %>
+
+<title><%= title %></title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <ul>
+        <% receipts.forEach(receipt => { %>
+            <li><a href="/receipt/<%= receipt._id %>">Receipt <%= receipt._id %></a></li>
+        <% }); %>
+    </ul>
+</div>
+
+<%- include('../partials/footer')%>

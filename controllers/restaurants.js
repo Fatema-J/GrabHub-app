@@ -61,7 +61,7 @@ const show = async (req, res) => {
 
 
   res.render('restaurants/show', { title: restaurant.name, restaurant, restaurantMenu, basket })
-
+}
 
 module.exports = {
   index,

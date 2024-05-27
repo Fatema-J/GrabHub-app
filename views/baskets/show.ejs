@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+    <% if (user) {%>
     <h2>Basket</h2>
     <h3>Order Details</h3>
     
@@ -35,6 +36,7 @@
 <h3>Total price:</h3>
 <!-- 
 orderedItems price and total payment  -->
-  </div>
+  <% } else { %> 
+    <p>Please sign in to view your basket</p> <% } %>
   </body>
 </html>

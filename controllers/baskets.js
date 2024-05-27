@@ -1,5 +1,4 @@
 const Basket = require('../models/basket')
-const Dish = require('../models/dish')
 
 const add = async (req, res) => {
   const basket = await Basket.find({})
@@ -22,14 +21,10 @@ async function deleteBasket(req, res) {
 
 const show = async (req, res) => {
   try {
-    const baskets = await Basket.findById('6654314fe9c6c5b6fea3d9a1')
-    console.log(baskets.orderedItems)
-    const basketdish = await Dish.findById(baskets.orderedItems[0].dish)
-    console.log(basketdish)
+    const baskets = await Basket.find({})
     res.render('baskets/show', {
       title: 'Basket',
-      baskets,
-      basketdish
+      baskets
     })
   } catch (err) {
     console.log(err)
@@ -47,4 +42,3 @@ module.exports = {
   delete: deleteBasket,
   update: updateBasket
 }
-

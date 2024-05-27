@@ -1,0 +1,22 @@
+<%- include('../partials/header')%>
+
+
+<% restaurants.forEach(restaurant => {%>
+  <div class="restaurants">
+    <a href="/restaurants/<%= restaurant._id %>">
+      <%=restaurant.name%>
+    </a>
+  </div>
+<%}); %>
+
+<h1><%= title %></h1>
+<p><strong>Receipt ID:</strong> <%= receipt._id %></p>
+<p><strong>Total Amount:</strong> <%= receipt.totalAmount %></p>
+<h2>Ordered Dishes:</h2>
+<ul>
+    <% receipt.orderedDishes.forEach(dish => { %>
+        <li>Name: <%= dish.name %>, Price: <%= dish.price %>, Quantity: <%= dish.quantity %></li>
+    <% }); %>
+</ul>
+
+<%- include('../partials/footer')%>

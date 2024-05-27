@@ -23,7 +23,7 @@ const newReciept = async (req, res) => {
   try {
     const orderedDishes = req.body;
     const totalAmount = req.body;
-    const newOrder = new Receipt({
+    const newOrder = new Reciept({
       orderedDishes,
       totalAmount,
     })

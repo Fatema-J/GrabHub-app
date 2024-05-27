@@ -4,6 +4,6 @@ const recieptCtrl = require('../controllers/reciept');
 
 router.get('/', recieptCtrl.index);
 router.get('/:id', recieptCtrl.show);
-
+router.post('/confirm', recieptCtrl.confirmOrder);
 module.exports = router;
 

@@ -1,4 +1,5 @@
-const Basket = require('../models/basket')
+const Basket = require('../models/basket');
+const Restaurant = require('../models/restaurant');
 const User = require('../models/user')
 
 
@@ -14,7 +15,9 @@ const create = async  (req, res) => {
     basket.orderedItems.push(req.body);
     const updatedBasket = await basket.save()
 
-    res.redirect(`/baskets/${updatedBasket._id}`) //${updatedBasket._id}
+    const restaurant = await Restaurant.findOne({menu: req.body.dish})
+    //redirect to the restaurant show
+    res.redirect(`/restaurants/${restaurant._id}`) //${updatedBasket._id}
   } catch (err) {
     console.error(err)
   }

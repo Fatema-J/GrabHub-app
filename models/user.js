@@ -5,7 +5,13 @@ const { recieptSchema } = require('./reciept')
 const userSchema = new Schema({
   name: String,
   basket: { type: Schema.Types.ObjectId, ref: 'Basket' },
-  receipts: [recieptSchema]
+  receipts: [recieptSchema],
+  googleId: {
+    type: String,
+    required: true
+  },
+  email: String,
+  avatar: String
 }, {
   timestamps: true
 });

@@ -2,13 +2,9 @@ const Restaurant = require('../models/restaurant')
 const Dish = require('../models/dish')
 const mongodb = require('mongodb')
 const { ObjectId } = mongodb
-
-<<<<<<< HEAD
-=======
 const Basket = require('../models/basket')
 const User = require('../models/user')
 
->>>>>>> 1e81ce9a6e35c71112f8ac2a389545966d0003a5
 
 const showDish = async (req, res) => {
   try {

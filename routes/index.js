@@ -24,13 +24,13 @@ router.get('/oauth2callback', passport.authenticate(
   'google',
   {
     successRedirect: '/restaurants',
-    failureRedirect: '/restaurants'
+    failureRedirect: '/index'
   }
 ));
 // OAuth logout route
 router.get('/logout', function(req, res){
   req.logout(function() {
-    res.redirect('/restaurants');
+    res.redirect('/index');
   });
 });
 

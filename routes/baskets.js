@@ -4,7 +4,12 @@ const basketCtrl = require('../controllers/baskets')
 
 router.get('/', basketCtrl.show)
 
+//
+// router.post('/basket:basketId/itemId', basketCtrl.update)
+
+
 router.post('/baskets/:id/itemId', basketCtrl.update)
+
 router.delete('/', basketCtrl.delete)
 
 router.post('/', basketCtrl.add)

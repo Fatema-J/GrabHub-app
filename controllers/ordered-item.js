@@ -1,14 +1,23 @@
-const Basket = require('../models/basket')
+const Basket = require('../models/basket');
+const Restaurant = require('../models/restaurant');
+const User = require('../models/user')
 
-async function create(req, res) {
+
+
+//create new ordered item
+const create = async  (req, res) => {
   try {
-    // find the basket
-    const basket = await Basket.findById(req.params.id)
+    console.log('creating ordered item');
+
+    console.log(req.body)
     // add the ordered item
-    basket.orderedItems.push(req.body)
-    // save
+    const basket = await Basket.findById(req.params.id)
+    basket.orderedItems.push(req.body);
     const updatedBasket = await basket.save()
-    res.redirect(`/baskets/$(updatedBasket._id)`)
+
+    const restaurant = await Restaurant.findOne({menu: req.body.dish})
+    //redirect to the restaurant show
+    res.redirect(`/restaurants/${restaurant._id}`) //${updatedBasket._id}
   } catch (err) {
     console.error(err)
   }

@@ -1,16 +1,20 @@
 const Basket = require('../models/basket')
+const User = require('../models/user')
 
-async function create(req, res) {
+
+
+//create new ordered item
+const create = async  (req, res) => {
   try {
-    // find the basket
-    const basket = await Basket.findById(req.params.id)
-    // add the ordered item
+    console.log('creating ordered item');
 
-    //req.body.addDish <<< use this to add the reference
-    basket.orderedItems.push(req.body)
-    // save
+    console.log(req.body)
+    // add the ordered item
+    const basket = await Basket.findById(req.params.id)
+    basket.orderedItems.push(req.body);
     const updatedBasket = await basket.save()
-    res.redirect(`/baskets/$(updatedBasket._id)`)
+
+    res.redirect(`/baskets/${updatedBasket._id}`) //${updatedBasket._id}
   } catch (err) {
     console.error(err)
   }

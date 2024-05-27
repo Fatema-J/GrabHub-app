@@ -3,6 +3,6 @@ const router = express.Router()
 const orderedItemsCtrl = require('../controllers/ordered-item')
 
 
-router.post('/basket/:id/ordered-item', orderedItemsCtrl.create)
+router.post('/baskets/:id/ordered-item', orderedItemsCtrl.create)
 
 module.exports = router

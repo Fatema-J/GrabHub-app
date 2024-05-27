@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+const { recieptSchema } = require('./reciept')
 
 const userSchema = new Schema({
   name: String,

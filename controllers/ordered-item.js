@@ -15,6 +15,7 @@ const create = async  (req, res) => {
     basket.orderedItems.push(req.body);
     const updatedBasket = await basket.save()
 
+    //find restaurant that has the dish to navugate back to it
     const restaurant = await Restaurant.findOne({menu: req.body.dish})
     //redirect to the restaurant show
     res.redirect(`/restaurants/${restaurant._id}`) //${updatedBasket._id}
@@ -22,6 +23,9 @@ const create = async  (req, res) => {
     console.error(err)
   }
 }
+
+
+
 
 module.exports = {
   create

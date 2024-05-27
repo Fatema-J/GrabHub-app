@@ -10,10 +10,9 @@ async function create(req, res) {
     basket.orderedItems.push(req.body)
     // save
     const updatedBasket = await basket.save()
-    res.redirect(`/basket/${updatedBasket._id}`)
+    res.redirect(`/baskets/$(updatedBasket._id)`)
   } catch (err) {
     console.error(err)
-    res.status(500).send(err.message)
   }
 }
 module.exports = {

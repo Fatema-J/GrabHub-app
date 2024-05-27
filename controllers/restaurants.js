@@ -2,7 +2,6 @@ const Restaurant = require('../models/restaurant')
 const Dish = require('../models/dish')
 const mongodb = require('mongodb')
 const { ObjectId } = mongodb
-const Dish = require('../models/dish')
 
 const showDish = async (req, res) => {
   try {

@@ -3,7 +3,7 @@ var router = express.Router();
 const recieptCtrl = require('../controllers/reciept');
 
 router.get('/', recieptCtrl.index);
-router.get('/', recieptCtrl.show)
+router.get('/:id', recieptCtrl.show);
 
 module.exports = router;
 

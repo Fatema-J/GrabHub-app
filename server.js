@@ -15,7 +15,7 @@ var usersRouter = require('./routes/users')
 var restaurantsRouter = require('./routes/restaurants')
 var basketsRouter = require('./routes/baskets')
 const orderedItemsRouter = require('./routes/ordered-item')
-
+var recieptRouter = require('./routes/reciept')
 var app = express()
 
 // view engine setup
@@ -45,7 +45,7 @@ app.use('/users', usersRouter)
 app.use('/restaurants', restaurantsRouter)
 app.use('/baskets', basketsRouter)
 app.use('/', orderedItemsRouter)
-
+app.use('/reciept', recieptRouter)
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404))

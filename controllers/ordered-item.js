@@ -8,7 +8,6 @@ const create = async (req, res) => {
     console.log('creating ordered item')
 
     console.log(req.body)
-
     // add the ordered item
     const basket = await Basket.findById(req.params.id)
     basket.orderedItems.push(req.body)
@@ -17,28 +16,44 @@ const create = async (req, res) => {
     //find restaurant that has the dish to navugate back to it
     const restaurant = await Restaurant.findOne({ menu: req.body.dish })
     //redirect to the restaurant show
-    res.redirect(`/restaurants/${restaurant._id}`)
+    res.redirect(`/restaurants/${restaurant._id}`) //${updatedBasket._id}
   } catch (err) {
     console.error(err)
   }
 }
+async function deleteItem(req, res) {
+  // /baskets/:basketsId/ordered-item/:itemId
+  console.log('??????????????????????')
+  const basket = await Basket.findOne({
+    'orderedItems._id': req.params.basketsId
+  })
+  if (!basket) return res.redirect('/baskets')
+  basket.orderedItems.remove(req.params.itemId)
 
-const update = async (req, res) => {
-  try {
-    // /baskets/:basketId/:itemId
-
-    //find the basket
-    const basket = await Basket.findById(req.params.basketId)
-
-    //find the ordereditems
-    const orderedItem = await basket.orderedItems.id(req.params.itemId)
-    console.log(' OUR ITEM: ', orderedItem)
-  } catch (error) {
-    console.error(error)
-  }
+  await basket.save()
+  res.redirect(`/baskets/${basket._id}`)
 }
+
+// delete ,clear ordered items only
+
+// async function deleteItem(req, res) {
+//   try {
+//     await Basket.findById(req.params.id)
+
+//     res.render(`basket/${orderedItems._id}`)
+
+//   } catch (err) {
+//     console.log(err)
+//   }
+// }
+
+// const deleteItem = (req, res) => {
+//   Basket.deleteOne(req.params.id)
+//   res.redirect('/baskets')
+//   console.log('delete item')
+// }
 
 module.exports = {
   create,
-  update
+  delete: deleteItem
 }

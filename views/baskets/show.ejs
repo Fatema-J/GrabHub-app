@@ -25,7 +25,7 @@
       <div class="details">comments:</div>
       <div><%= baskets.orderedItems[i].comments%></div>
 
-      <form class="delete-dish" action="/baskets/<%=baskets._id%>/ordered-item?_method=DELETE" method="POST">
+      <form class="delete-dish" action="/baskets/<%=baskets._id%>/ordered-item/<%=baskets.orderedItems[i]._id%>?_method=DELETE" method="POST">
       <button type="submit" >remove</button>
     </form>
   <%} %>

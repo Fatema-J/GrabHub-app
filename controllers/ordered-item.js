@@ -21,6 +21,18 @@ const create = async (req, res) => {
     console.error(err)
   }
 }
+async function deleteItem(req, res) {
+  // /baskets/:basketsId/ordered-item/:itemId
+
+  const basket = await Basket.findOne({
+    'orderedItems._id': req.params.basketsId
+  })
+  // if (!basket) return res.redirect('/baskets')
+  basket.orderedItems.remove(req.params.itemId)
+  console.log('??????')
+  await basket.save()
+  res.redirect(`/baskets/${basket._id}`)
+}
 
 // delete ,clear ordered items only
 
@@ -29,11 +41,12 @@ const create = async (req, res) => {
 //     await Basket.findById(req.params.id)
 
 //     res.render(`basket/${orderedItems._id}`)
-//
+
 //   } catch (err) {
 //     console.log(err)
 //   }
 // }
+
 // const deleteItem = (req, res) => {
 //   Basket.deleteOne(req.params.id)
 //   res.redirect('/baskets')

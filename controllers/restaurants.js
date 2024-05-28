@@ -17,11 +17,8 @@ const show = async (req, res) => {
   const dishes = await Dish.find({})
 
   const restaurantMenu = restaurant.menu
-  const user = await User.findById('66542dcde9c6c5b6fea3d99f').populate(
-    'basket'
-  )
-  console.log('user basket id', user.basket._id)
-  const basket = await Basket.findById(user.basket._id)
+
+  const basket = await Basket.findById(req.user.basket)
 
   // const allCategories = restaurant.menu.map((dish) => dish.category)
   // //keep distinct categories only

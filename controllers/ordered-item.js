@@ -9,7 +9,7 @@ const create = async (req, res) => {
 
 
     // add the ordered item
-    const basket = await Basket.findById(req.params.id)
+    const basket = await Basket.findById(req.user.basket)
     basket.orderedItems.push(req.body)
     const updatedBasket = await basket.save()
 
@@ -26,10 +26,8 @@ const create = async (req, res) => {
 
 const update = async(req, res) =>{
   try {
-    // /baskets/:basketId/:itemId
-
     //find the basket
-    const basket = await Basket.findById(req.params.basketId)
+    const basket = await Basket.findById(req.user.basket)
 
     //find the ordereditems
     const orderedItem = basket.orderedItems.id(req.params.itemId)
@@ -37,7 +35,7 @@ const update = async(req, res) =>{
 
     const updatedBasket = await basket.save();
 
-    res.redirect(`/baskets/${updatedBasket._id}`)
+    res.redirect(`/baskets`) // /${updatedBasket._id}
   } catch (error) {
     console.error(error)
   }

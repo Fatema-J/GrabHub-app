@@ -20,11 +20,12 @@ const create = async (req, res) => {
   try {
     // add the receipt
     const reciept = await Reciept.findById(req.params.id)
+    console.log('===========')
     reciept.orderedDishes.push(req.body)
+    //reciept.totalamount = totalamount()
+    reciept.userId = req.user
     const updatedReceipt = await reciept.save()
 
-    //find restaurant that has the dish to navugate back to it
-    // const restaurant = await Restaurant.findOne({ menu: req.body.dish })
     //redirect to the reciept show
     res.redirect(`/reciept/${reciept._id}`) //${updatedBasket._id}
   } catch (err) {

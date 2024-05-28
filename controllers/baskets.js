@@ -10,13 +10,11 @@ const add = async (req, res) => {
 }
 
 //order payment function that will clear basket upon successful payment
-<<<<<<< HEAD
+
 async function payOrder(req, res) {
-=======
-async function payOrder(req,res){
-  console.log('payOrder controller hit');
-  console.log('User:', req.user);
->>>>>>> 78200aeda33e5ffa58d94d18d808fd1511a47f23
+  console.log('payOrder controller hit')
+  console.log('User:', req.user)
+
   try {
     await Basket.findByIdAndUpdate(req.user.basket, {
       $set: { orderedItems: [] }
@@ -43,7 +41,6 @@ async function deleteBasket(req, res) {
 const show = async (req, res) => {
   try {
     const baskets = await Basket.findById('6654314fe9c6c5b6fea3d9a1')
-
 
     // Use Promise.all to wait for all promises to resolve
     //it returned an array of promises before using it

@@ -8,6 +8,21 @@ const add = async (req, res) => {
       basket
     }
 }
+
+//order payment function that will clear basket upon successful payment
+async function payOrder(req,res){
+
+  try {
+    await Basket.findByIdAndUpdate(req.user.basket, {$set: {orderedItems: [] }})
+    res.render('paymentSuccess')
+  } catch (error){
+    console.error(error); 
+    res.status(500).send('Internal Server Error')
+  }
+}; 
+ 
+
+
 //delete, +if statement
 async function deleteBasket(req, res) {
   try {
@@ -58,5 +73,6 @@ module.exports = {
   show,
   add,
   delete: deleteBasket,
-  update: updateBasket
+  update: updateBasket, 
+  payOrder
 }

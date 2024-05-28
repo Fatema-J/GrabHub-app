@@ -8,7 +8,21 @@ const add = async (req, res) => {
       basket
     }
 }
-//delete
+
+//order payment function that will clear basket upon successful payment
+async function payOrder(req, res) {
+  try {
+    await Basket.findByIdAndUpdate(req.user.basket, {
+      $set: { orderedItems: [] }
+    })
+    res.render('paymentSuccess')
+  } catch (error) {
+    console.error(error)
+    res.status(500).send('Internal Server Error')
+  }
+}
+
+//delete, +if statement
 async function deleteBasket(req, res) {
   try {
     await Basket.findById(req.params.id)
@@ -23,6 +37,7 @@ async function deleteBasket(req, res) {
 const show = async (req, res) => {
   try {
     const baskets = await Basket.findById('6654314fe9c6c5b6fea3d9a1')
+
     console.log(baskets.orderedItems)
 
     // Use Promise.all to wait for all promises to resolve
@@ -57,9 +72,11 @@ async function updateBasket(req, res) {
   const basket = await Basket.findById({})
   res.render('basket/updatedBasket')
 }
+
 module.exports = {
   show,
   add,
   delete: deleteBasket,
-  update: updateBasket
+  update: updateBasket,
+  payOrder
 }

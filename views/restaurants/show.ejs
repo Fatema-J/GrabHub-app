@@ -18,8 +18,8 @@
       <% if(basket){ %>
       <form id="add-dish-quantity" action="/baskets/<%=basket._id%>/ordered-item" method="POST">
         <input type="hidden" name="dish" value="<%= dish._id %>">
-        <input type="number" name="quantity" value="1" min="0">
-        <!-- `${dish._id}` -->
+        <input type="number" name="quantity" value="1" min="1">
+
         <button type="submit">Add</button>
       </form>
     <%}

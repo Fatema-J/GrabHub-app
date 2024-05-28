@@ -1,5 +1,9 @@
 const Basket = require('../models/basket')
 const Dish = require('../models/dish')
+
+
+
+
 const add = async (req, res) => {
   const basket = await Basket.find({})
   res.render('basket/add'),
@@ -38,9 +42,12 @@ async function deleteBasket(req, res) {
     console.log(err)
   }
 }
+
+
 const show = async (req, res) => {
   try {
-    const baskets = await Basket.findById('6654314fe9c6c5b6fea3d9a1')
+    
+    const baskets = await Basket.findById(req.user.basket)
 
     // Use Promise.all to wait for all promises to resolve
     //it returned an array of promises before using it

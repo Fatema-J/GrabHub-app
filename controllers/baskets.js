@@ -54,18 +54,6 @@ const show = async (req, res) => {
     console.log(basketdish);
     
 
-
-
-=========
-    const basketdish = []
-    baskets.orderedItems.forEach(async (item) => {
-      console.log(item.dish)
-      basketdish.push(await Dish.findById(item.dish))
-    })
-    //await Dish.findById(baskets.orderedItems[0].dish)
-    console.log('=============================')
-    console.log(basketdish)
->>>>>>>>> Temporary merge branch 2
     res.render('baskets/show', {
       title: 'Basket',
       baskets,
@@ -80,6 +68,7 @@ async function updateBasket(req, res) {
   const basket = await Basket.findById({})
   res.render('basket/updatedBasket')
 }
+
 module.exports = {
   show,
   add,

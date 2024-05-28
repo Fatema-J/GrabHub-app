@@ -11,25 +11,27 @@
     <h2>Basket</h2>
     <h3>Order Details</h3>
     
+   
 <section>
-  <div class="details">dish details:</div>
-    <div><%= basketdish.Item  %></div>
-    <div class="details">category:</div>
-  <div><%=  basketdish.category%></div>
-  <div class="details">price:</div>
-  <div><%=  basketdish.price%></div>
-
-  <div class="details">quantity:</div>
-  <% baskets.orderedItems.forEach(item=>{ %>
-  <div ><%=item.quantity%></div>
-
-    <div class="details">comments:</div>
-  <div><%= item.comments%></div>
+  <% for(let i=0 ; i<baskets.orderedItems.length ; i++ ){%>
+      <div class="details">dish details:</div>
+      <div><%= basketdish[i].Item  %></div>
+      <div class="details">category:</div>
+      <div><%=  basketdish[i].category%></div>
+      <div class="details">price:</div>
+      <div><%=  basketdish[i].price%></div>
+      <div class="details">quantity:</div>
+      <div ><%=baskets.orderedItems[i].quantity%></div>
+      <div class="details">comments:</div>
+      <div><%= baskets.orderedItems[i].comments%></div>
 
       <input type="submit" value="+" />
       <input type="submit" value="-" />
-      <% }) %>
+  <%} %>
+
+
 </section>
+
 
 <h3>Total price:</h3>
 <!-- 

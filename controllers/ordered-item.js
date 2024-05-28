@@ -22,7 +22,25 @@ const create = async (req, res) => {
   }
 }
 
+// delete ,clear ordered items only
+
+// async function deleteItem(req, res) {
+//   try {
+//     await Basket.findById(req.params.id)
+
+//     res.render(`basket/${orderedItems._id}`)
+//
+//   } catch (err) {
+//     console.log(err)
+//   }
+// }
+// const deleteItem = (req, res) => {
+//   Basket.deleteOne(req.params.id)
+//   res.redirect('/baskets')
+//   console.log('delete item')
+// }
+
 module.exports = {
-  create
-  // addItem
+  create,
+  delete: deleteItem
 }

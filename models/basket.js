@@ -17,7 +17,7 @@ const orderedItemSchema = new Schema({
 // create basket, embeded ordered item in basket
 const basketSchema = new Schema({
   // user: { type: Schema.Types.ObjectId, ref: 'User' },
-  orderedItems: [orderedItemSchema], 
+  orderedItems: [orderedItemSchema],
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
@@ -25,10 +25,6 @@ const basketSchema = new Schema({
   },
   userName: String,
   userAvatar: String
-  
 })
-// adding to basket and removing
-// viewing basket
-// save basket
 
 module.exports = mongoose.model('Basket', basketSchema)

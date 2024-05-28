@@ -8,7 +8,7 @@ const add = async (req, res) => {
       basket
     }
 }
-//delete, +if statement
+//delete
 async function deleteBasket(req, res) {
   try {
     await Basket.findById(req.params.id)

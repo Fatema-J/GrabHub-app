@@ -9,6 +9,10 @@ router.delete('/', basketCtrl.delete)
 
 router.post('/', basketCtrl.add)
 
-router.post('/payOrder', basketCtrl.payOrder)
+// router.post('/payOrder', basketCtrl.payOrder)
+
+router.post('/payOrder', (req,res,next) => {
+    console.log('payOrder route hit'); 
+    next(); }, basketCtrl.payOrder); 
 
 module.exports = router

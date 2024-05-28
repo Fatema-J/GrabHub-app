@@ -36,9 +36,14 @@ const show = async (req, res) => {
         return await Dish.findById(item.dish)
       })
     )
-
     console.log(basketdish)
-
+    //totalamount
+    let totalAmount = 0
+    baskets.orderedItems.forEach((item) => {
+      basketdish.push(baskets.orderedItems)
+      totalAmount += item.dish.price * item.quantity
+      console.log(totalAmount)
+    })
     res.render('baskets/show', {
       title: 'Basket',
       baskets,

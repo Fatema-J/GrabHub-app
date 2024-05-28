@@ -40,8 +40,17 @@
 <h3>Total price:</h3>
 <div><%= totalAmount %></div>
   </div>
-  </body>
 
+  <form action="/payOrder" method="POST">
+    <button type="submit">Proceed to Pay</button>
+  </form>
+
+  
+  <div id="paymentMessage" style="display: none;">
+    <p>Thanks for payment!</p>
+    <a href="/receipt">View Receipt</a>
+  </div>
+  </body>
   <% } else { %> 
     <p>Please sign in to view your basket</p> <% } %>
 </html>

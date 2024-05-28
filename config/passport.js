@@ -48,7 +48,7 @@ passport.serializeUser(function(user, cb) {
   // Add beneath searilizeUser
 passport.deserializeUser(async function(id, cb) {
     try {
-      const user = await User.findById(id);
+      const user = await User.findById(id).populate('basket');
       cb(null, user);
     } catch (err) {
       cb(err);

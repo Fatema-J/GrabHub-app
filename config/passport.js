@@ -1,6 +1,8 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const User = require('../models/user');
+const basket = require('../models/basket');
+const user = require('../models/user');
 
 passport.use(new GoogleStrategy(
     // Configuration object
@@ -25,6 +27,11 @@ passport.use(new GoogleStrategy(
           email: profile.emails[0].value,
           avatar: profile.photos[0].value
         });
+
+        const basket = await Basket.create({user: user._id})
+        user.basket = basket._id; 
+        await user.save(); 
+        
         return cb(null, user);
       } catch (err) {
         return cb(err);
@@ -32,6 +39,8 @@ passport.use(new GoogleStrategy(
 
     }
   ));
+
+ 
 
   // Add to bottom of config/passport.js
 passport.serializeUser(function(user, cb) {
@@ -48,7 +57,7 @@ passport.serializeUser(function(user, cb) {
   // Add beneath searilizeUser
 passport.deserializeUser(async function(id, cb) {
     try {
-      const user = await User.findById(id).populate('basket');
+      const user = await User.findById(id);
       cb(null, user);
     } catch (err) {
       cb(err);

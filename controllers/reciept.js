@@ -10,7 +10,7 @@ async function index(req, res) {
 const show = async (req, res) => {
   try {
     const reciept = await Reciept.findById(req.params.id)
-    res.render(`reciept/show`, {title: 'Reciepts Details' , reciept})
+    res.render(`reciept/show`, { title: 'Reciepts Details', reciept })
   } catch (i) {
     console.error(i)
     res.redirect('/reciept/')
@@ -19,5 +19,6 @@ const show = async (req, res) => {
 
 module.exports = {
   index,
-  show
+  show,
+  create
 }

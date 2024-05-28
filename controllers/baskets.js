@@ -10,7 +10,13 @@ const add = async (req, res) => {
 }
 
 //order payment function that will clear basket upon successful payment
+<<<<<<< HEAD
 async function payOrder(req, res) {
+=======
+async function payOrder(req,res){
+  console.log('payOrder controller hit');
+  console.log('User:', req.user);
+>>>>>>> 78200aeda33e5ffa58d94d18d808fd1511a47f23
   try {
     await Basket.findByIdAndUpdate(req.user.basket, {
       $set: { orderedItems: [] }

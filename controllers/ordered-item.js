@@ -39,8 +39,20 @@ const update = async (req, res) => {
     console.error(error)
   }
 }
+async function deleteItem(req, res) {
+  // /baskets/:basketsId/ordered-item/:itemId
+  console.log('??????????????????????')
+  const basket = await Basket.findOne({
+    'orderedItems._id': req.params.basketsId
+  })
+  if (!basket) return res.redirect('/baskets')
+  basket.orderedItems.remove(req.params.itemId)
 
+  await basket.save()
+  res.redirect(`/baskets/${basket._id}`)
+}
 module.exports = {
   create,
-  delete: deleteItem
+  delete: deleteItem,
+  update
 }

@@ -25,9 +25,6 @@ async function deleteBasket(req, res) {
 const show = async (req, res) => {
   try {
     const baskets = await Basket.findById('6654314fe9c6c5b6fea3d9a1')
-    console.log(baskets.orderedItems)
-
-
     
     // Use Promise.all to wait for all promises to resolve
     //it returned an array of promises before using it
@@ -36,7 +33,6 @@ const show = async (req, res) => {
       return await Dish.findById(item.dish)
     }))
 
-    console.log(basketdish);
 
     res.render('baskets/show', {
       title: 'Basket',

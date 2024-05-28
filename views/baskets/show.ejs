@@ -11,7 +11,7 @@
     <h2>Basket</h2>
     <h3>Order Details</h3>
     
-   
+
 <section>
   <% for(let i=0 ; i<baskets.orderedItems.length ; i++ ){%>
       <div class="details">dish details:</div>
@@ -20,22 +20,25 @@
       <div><%=  basketdish[i].category%></div>
       <div class="details">price:</div>
       <div><%=  basketdish[i].price%></div>
-      <div class="details">quantity:</div>
-      <div ><%=baskets.orderedItems[i].quantity%></div>
+
       <div class="details">comments:</div>
       <div><%= baskets.orderedItems[i].comments%></div>
 
-      <input type="submit" value="+" />
-      <input type="submit" value="-" />
+      <form id="update-dish-quantity" action="/baskets/<%=baskets._id%>/ordered-items/<%=baskets.orderedItems[i]._id%>?_method=PUT" method="POST">
+        <div class="details">quantity:</div>
+        <input type="hidden" name="dish" value="<%= baskets.orderedItems[i]._id %>">
+        <input type="number" name="quantity" value="<%= baskets.orderedItems[i].quantity %>" min="0">
+
+        <button type="submit">Update</button>
+      </form>
+      <!-- <input type="submit" value="+" />
+      <input type="submit" value="-" /> -->
   <%} %>
-
-
 </section>
 
 
 <h3>Total price:</h3>
-<!-- 
-orderedItems price and total payment  -->
+<div><%= totalAmount %></div>
   </div>
   </body>
   <% } else { %> 

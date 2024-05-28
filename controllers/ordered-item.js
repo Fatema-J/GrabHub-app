@@ -7,7 +7,6 @@ const create = async (req, res) => {
   try {
     console.log('creating ordered item')
 
-    console.log(req.body)
 
     // add the ordered item
     const basket = await Basket.findById(req.params.id)
@@ -33,10 +32,12 @@ const update = async(req, res) =>{
     const basket = await Basket.findById(req.params.basketId)
 
     //find the ordereditems
-    const orderedItem = await basket.orderedItems.id(req.params.itemId)
-    console.log(' OUR ITEM: ', orderedItem)
+    const orderedItem = basket.orderedItems.id(req.params.itemId)
+    orderedItem.quantity = req.body.quantity;
 
-    
+    const updatedBasket = await basket.save();
+
+    res.redirect(`/baskets/${updatedBasket._id}`)
   } catch (error) {
     console.error(error)
   }

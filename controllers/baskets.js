@@ -1,6 +1,5 @@
 const Basket = require('../models/basket')
 const Dish = require('../models/dish')
-
 const add = async (req, res) => {
   const basket = await Basket.find({})
   res.render('basket/add'),
@@ -9,7 +8,6 @@ const add = async (req, res) => {
       basket
     }
 }
-
 //delete, +if statement
 async function deleteBasket(req, res) {
   try {
@@ -22,7 +20,6 @@ async function deleteBasket(req, res) {
     console.log(err)
   }
 }
-
 const show = async (req, res) => {
   try {
     const baskets = await Basket.findById('6654314fe9c6c5b6fea3d9a1')
@@ -36,14 +33,9 @@ const show = async (req, res) => {
         return await Dish.findById(item.dish)
       })
     )
+
     console.log(basketdish)
-    //totalamount
-    let totalAmount = 0
-    baskets.orderedItems.forEach((item) => {
-      basketdish.push(baskets.orderedItems)
-      totalAmount += item.dish.price * item.quantity
-      console.log(totalAmount)
-    })
+
     res.render('baskets/show', {
       title: 'Basket',
       baskets,
@@ -54,7 +46,6 @@ const show = async (req, res) => {
     console.log(err)
   }
 }
-
 // update the basket, +if statement
 async function updateBasket(req, res) {
   const basket = await Basket.findById({})

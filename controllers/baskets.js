@@ -42,6 +42,7 @@ const show = async (req, res) => {
     const baskets = await Basket.findById('6654314fe9c6c5b6fea3d9a1')
     console.log(baskets.orderedItems)
 
+
     
     // Use Promise.all to wait for all promises to resolve
     //it returned an array of promises before using it
@@ -55,6 +56,16 @@ const show = async (req, res) => {
 
 
 
+=========
+    const basketdish = []
+    baskets.orderedItems.forEach(async (item) => {
+      console.log(item.dish)
+      basketdish.push(await Dish.findById(item.dish))
+    })
+    //await Dish.findById(baskets.orderedItems[0].dish)
+    console.log('=============================')
+    console.log(basketdish)
+>>>>>>>>> Temporary merge branch 2
     res.render('baskets/show', {
       title: 'Basket',
       baskets,

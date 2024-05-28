@@ -1,6 +1,5 @@
 const Basket = require('../models/basket')
 const Dish = require('../models/dish')
-
 const add = async (req, res) => {
   const basket = await Basket.find({})
   res.render('basket/add'),
@@ -9,7 +8,6 @@ const add = async (req, res) => {
       basket
     }
 }
-
 //delete, +if statement
 async function deleteBasket(req, res) {
   try {
@@ -24,11 +22,11 @@ async function deleteBasket(req, res) {
     console.log(err)
   }
 }
-
 const show = async (req, res) => {
   try {
     const baskets = await Basket.findById('6654314fe9c6c5b6fea3d9a1')
     console.log(baskets.orderedItems)
+
 
     
     // Use Promise.all to wait for all promises to resolve
@@ -39,9 +37,6 @@ const show = async (req, res) => {
     }))
 
     console.log(basketdish);
-    
-
-
 
     res.render('baskets/show', {
       title: 'Basket',
@@ -52,7 +47,6 @@ const show = async (req, res) => {
     console.log(err)
   }
 }
-
 // update the basket, +if statement
 async function updateBasket(req, res) {
   const basket = await Basket.findById({})
@@ -64,4 +58,3 @@ module.exports = {
   delete: deleteBasket,
   update: updateBasket
 }
-

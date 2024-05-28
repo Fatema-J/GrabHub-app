@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+    <% if (user) {%>
     <h2>Basket</h2>
     <h3>Order Details</h3>
     
+   
 <section>
   <% for(let i=0 ; i<baskets.orderedItems.length ; i++ ){%>
       <div class="details">dish details:</div>
@@ -30,9 +32,14 @@
 
 </section>
 
+
 <h3>Total price:</h3>
 <!-- 
 orderedItems price and total payment  -->
   </div>
   </body>
+
+  <% } else { %> 
+    <p>Please sign in to view your basket</p> <% } %>
 </html>
+

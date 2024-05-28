@@ -18,11 +18,11 @@ const orderedItemSchema = new Schema({
 const basketSchema = new Schema({
   // user: { type: Schema.Types.ObjectId, ref: 'User' },
   orderedItems: [orderedItemSchema], 
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
-  },
+  // user: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'User',
+  //   required: true
+  // },
   userName: String,
   userAvatar: String
   

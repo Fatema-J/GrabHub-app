@@ -1,9 +1,7 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const User = require('../models/user');
-const basket = require('../models/basket');
-const user = require('../models/user');
-
+const Basket = require('../models/basket')
 passport.use(new GoogleStrategy(
     // Configuration object
     {
@@ -15,6 +13,10 @@ passport.use(new GoogleStrategy(
     // Let's use async/await!
     async function(accessToken, refreshToken, profile, cb) {
       // A user has logged in with OAuth...
+      let basket = await Basket.create({orderedItems: [],
+        userName: '',
+        userAvatar: ''})
+      
       try {
         // A user has logged in with OAuth...
         let user = await User.findOne({ googleId: profile.id });
@@ -25,23 +27,15 @@ passport.use(new GoogleStrategy(
           name: profile.displayName,
           googleId: profile.id,
           email: profile.emails[0].value,
-          avatar: profile.photos[0].value
+          avatar: profile.photos[0].value,
+          basket: basket._id
         });
-
-        const basket = await Basket.create({user: user._id})
-        user.basket = basket._id; 
-        await user.save(); 
-        
         return cb(null, user);
       } catch (err) {
         return cb(err);
       }
-
     }
   ));
-
- 
-
   // Add to bottom of config/passport.js
 passport.serializeUser(function(user, cb) {
     try {
@@ -53,7 +47,6 @@ passport.serializeUser(function(user, cb) {
       cb(err);
     }
   });
-
   // Add beneath searilizeUser
 passport.deserializeUser(async function(id, cb) {
     try {
@@ -63,4 +56,3 @@ passport.deserializeUser(async function(id, cb) {
       cb(err);
     }
   });
-  

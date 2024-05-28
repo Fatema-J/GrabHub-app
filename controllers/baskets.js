@@ -10,18 +10,21 @@ const add = async (req, res) => {
 }
 
 //order payment function that will clear basket upon successful payment
-async function payOrder(req,res){
+
+async function payOrder(req, res) {
+  console.log('payOrder controller hit')
+  console.log('User:', req.user)
 
   try {
-    await Basket.findByIdAndUpdate(req.user.basket, {$set: {orderedItems: [] }})
+    await Basket.findByIdAndUpdate(req.user.basket, {
+      $set: { orderedItems: [] }
+    })
     res.render('paymentSuccess')
-  } catch (error){
-    console.error(error); 
+  } catch (error) {
+    console.error(error)
     res.status(500).send('Internal Server Error')
   }
-}; 
- 
-
+}
 
 //delete, +if statement
 async function deleteBasket(req, res) {
@@ -39,8 +42,6 @@ const show = async (req, res) => {
   try {
     const baskets = await Basket.findById('6654314fe9c6c5b6fea3d9a1')
 
-    console.log(baskets.orderedItems)
-
     // Use Promise.all to wait for all promises to resolve
     //it returned an array of promises before using it
     // source: https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop
@@ -49,15 +50,14 @@ const show = async (req, res) => {
         return await Dish.findById(item.dish)
       })
     )
-    console.log(basketdish)
+
     //totalamount
     let totalAmount = 0
     for (let i = 0; i < baskets.orderedItems.length; i++) {
       // basketdish.push(baskets.orderedItems)
       totalAmount += baskets.orderedItems[i].quantity * basketdish[i].price
-      console.log(totalAmount)
+      // console.log(totalAmount)
     }
-
 
     res.render('baskets/show', {
       title: 'Basket',
@@ -79,6 +79,6 @@ module.exports = {
   show,
   add,
   delete: deleteBasket,
-  update: updateBasket, 
+  update: updateBasket,
   payOrder
 }

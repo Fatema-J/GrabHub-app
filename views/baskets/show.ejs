@@ -24,6 +24,10 @@
       <div class="details">comments:</div>
       <div><%= baskets.orderedItems[i].comments%></div>
 
+      <form class="delete-dish" action="/baskets/<%=baskets._id%>/ordered-item/<%=baskets.orderedItems[i]._id%>?_method=DELETE" method="POST">
+        <button type="submit" >remove</button>
+      </form>
+
       <form id="update-dish-quantity" action="/baskets/<%=baskets._id%>/ordered-items/<%=baskets.orderedItems[i]._id%>?_method=PUT" method="POST">
         <div class="details">quantity:</div>
         <input type="hidden" name="dish" value="<%= baskets.orderedItems[i]._id %>">
@@ -48,7 +52,7 @@
   
   <div id="paymentMessage" style="display: none;">
     <p>Thanks for payment!</p>
-    <a href="/receipt">View Receipt</a>
+    <a href="/reciept">View Receipt</a>
   </div>
   </body>
   <% } else { %> 

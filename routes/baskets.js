@@ -9,4 +9,6 @@ router.delete('/', basketCtrl.delete)
 
 router.post('/', basketCtrl.add)
 
+router.post('/payOrder', basketCtrl.payOrder)
+
 module.exports = router

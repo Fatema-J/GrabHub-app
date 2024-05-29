@@ -12,6 +12,11 @@ const orderedItemSchema = new Schema({
     required: true
   },
   dish: { type: Schema.Types.ObjectId, ref: 'Dish' }
+  // user: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'User',
+  //   required: true
+  // }
 })
 
 // create basket, embeded ordered item in basket

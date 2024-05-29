@@ -1,10 +1,18 @@
-var express = require('express');
-var router = express.Router();
-const recieptCtrl = require('../controllers/reciept');
+var express = require('express')
+var router = express.Router()
+const recieptCtrl = require('../controllers/reciept')
 
-router.get('/', recieptCtrl.index);
-router.get('/:id', recieptCtrl.show);
+router.get('/', recieptCtrl.index)
+router.get('/:id', recieptCtrl.show)
 router.post('/', recieptCtrl.create)
 
-module.exports = router;
+module.exports = router
 
+var express = require('express')
+var router = express.Router()
+
+router.get('/', recieptCtrl.index)
+router.get('/:id', recieptCtrl.show)
+
+router.post('/', recieptCtrl.create)
+module.exports = router

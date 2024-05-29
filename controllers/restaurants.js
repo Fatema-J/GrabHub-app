@@ -17,6 +17,7 @@ const show = async (req, res) => {
   const dishes = await Dish.find({})
 
   const restaurantMenu = restaurant.menu
+  console.log({ user: req.user })
 
   const basket = await Basket.findById(req.user.basket)
 

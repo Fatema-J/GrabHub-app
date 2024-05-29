@@ -58,9 +58,6 @@ app.use(function (req, res, next) {
   res.locals.user = req.user
   next()
 })
-  res.locals.user = req.user
-  next()
-})
 
 app.use('/', indexRouter)
 app.use('/users', usersRouter)

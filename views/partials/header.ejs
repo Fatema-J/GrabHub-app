@@ -6,18 +6,18 @@
   </head>
   <body>
     <nav>
-     
-      <img src="/images/rest-cutlery">
+     <ul><img src="/images/rest-cutlery">
      
       <% if (user) { %>
-       
-        <a href="/restaurants">Restaurants</a>
-        <a href="/baskets"><img class="bskt" src="images/shopping-cart-svgrepo-com" alt="Basket"></a>
-        <a href="/reciept">Order History</a>
-        <a href="/logout">LOG OUT</a>
+        <li><a href="/restaurants">Restaurants</a></li> 
+        <li><a href="/baskets"><img class="bskt" src="images/shopping-cart-svgrepo-com" alt="Basket"></a></li>
+        <li><a href="/receipt">Order History</a></li>
+        <li><a href="/logout">LOG OUT</a></li>
        
       <% } else { %>
-        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+        <li style="float:right"><a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a></li>
       <% } %>
+    </ul>
+ 
     </nav>
     <h1><%=title%></h1>

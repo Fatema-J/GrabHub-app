@@ -82,7 +82,7 @@ const create = async (totalAmount, userBasketId, userId) => {
 module.exports = {
   index,
   show,
-  newReciept
+  newReciept,
   show,
   create
 }

@@ -1,9 +1,8 @@
-const reciept = require('../models/reciept')
-const Reciept = require('../models/reciept')
+const {Reciept} = require('../models/reciept')
 
 async function index(req, res) {
   console.log(req.user)
-  const reciepts = await reciept.find({})
+  const reciepts = await Reciept.find({})
   res.render('reciept/index', { title: 'All reciepts', reciepts })
 }
 

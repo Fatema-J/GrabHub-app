@@ -15,9 +15,13 @@ const show = async (req, res) => {
   const restaurant = await Restaurant.findById(req.params.id).populate('menu')
 
   const restaurantMenu = restaurant.menu
-  console.log({ user: req.user })
 
-  const basket = await Basket.findById(req.user.basket)
+  let basket;
+  if(req.user){
+    basket = await Basket.findById(req.user.basket)
+  }
+  
+  
   res.render('restaurants/show', {
     title: restaurant.name,
     restaurant,

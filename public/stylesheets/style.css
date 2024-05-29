@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  /* padding: 50px; */
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
   background-color: #a7bcb9;
 }
@@ -83,4 +83,16 @@ li a:hover {
 .restaurant p {
   margin: 0;
   color: #666;
+}
+
+.logo {
+  width: 350px;
+  height: 300px;
+  margin-left: 490px;
+}
+
+.res-enter {
+  background-color: #24527a;
+  border-radius: 5px;
+  margin-left: 490px;
 }

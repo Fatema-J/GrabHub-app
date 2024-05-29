@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const recieptSchema = new Schema(
+const receiptSchema = new Schema(
   {
     orderedDishes: [{ name: String, price: Number, quantity: Number }],
     totalAmount: Number,
@@ -11,9 +11,9 @@ const recieptSchema = new Schema(
     timestamps: true
   }
 )
-const Reciept = mongoose.model('Reciept', recieptSchema);
+const Receipt = mongoose.model('Receipt', receiptSchema)
 
 module.exports = {
-  Reciept,
-  recieptSchema
-};
+  Receipt,
+  receiptSchema
+}

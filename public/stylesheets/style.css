@@ -50,14 +50,14 @@ li a:hover {
 }
 
 .restaurant {
-  width: 200px;
-  margin: 10px;
+  width: 190px;
+  margin: 20px;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
-  background-color: #fff;
+  background-color: #d6dedc;
 }
 
 .restaurant a {

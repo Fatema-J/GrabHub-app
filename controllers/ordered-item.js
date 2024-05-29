@@ -38,9 +38,6 @@ const update = async (req, res) => {
   }
 }
 async function deleteItem(req, res) {
-  // /baskets/:basketsId/ordered-item/:itemId
-  console.log('??????????????????????')
-  console.log('basket id:', req.params.basketsId)
   const basket = await Basket.updateOne(
     { _id: req.params.basketsId },
     { $pull: { orderedItems: { _id: req.params.itemId } } }
@@ -48,9 +45,6 @@ async function deleteItem(req, res) {
 
   console.log('result', basket)
   if (!basket) return res.redirect('/baskets')
-  // basket.orderedItems.remove(req.params.itemId)
-
-  // await basket.save()
   res.redirect(`/baskets`)
 }
 module.exports = {

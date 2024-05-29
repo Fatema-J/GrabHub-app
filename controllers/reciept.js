@@ -18,6 +18,24 @@ const show = async (req, res) => {
   }
 }
 
+
+
+const newReciept = async (req, res) => {
+  try {
+    const orderedDishes = req.body;
+    const totalAmount = req.body;
+    const newOrder = new Reciept({
+      orderedDishes,
+      totalAmount,
+    })
+    await newOrder.save();
+
+  }catch (i) {
+    console.error(i)
+    res.redirect('/reciept/')
+  }
+}
+
 const create = async (totalAmount, userBasketId, userId) => {
   try {
     console.log({ totalAmount, userBasketId, userId })
@@ -63,6 +81,8 @@ const create = async (totalAmount, userBasketId, userId) => {
 
 module.exports = {
   index,
+  show,
+  newReciept
   show,
   create
 }

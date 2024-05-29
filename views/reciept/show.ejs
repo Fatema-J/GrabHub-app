@@ -3,7 +3,6 @@
 <p><strong>Total Amount:</strong> <%=reciept.totalAmount %></p>
 <h2>Ordered dishes:</h2>
 <ul>
-
   <%reciept.orderedDishes.forEach(dish => { %>
   <li>
     Name: <%= dish.name %>, Price: <%= dish.price %>, Quantity: <%=
@@ -12,7 +11,6 @@
   <% }); %>
 </ul>
 <%- include('../partials/footer')%>
-
     <%reciept.orderedDishes.forEach(dish => { %>
         <li>Name: <%= dish.name %>, Price: <%= dish.price %>, Quantity: <%= dish.quantity %></li>
     <% }); %>

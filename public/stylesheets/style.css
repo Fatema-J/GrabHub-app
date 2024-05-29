@@ -94,5 +94,13 @@ li a:hover {
 .res-enter {
   background-color: #24527a;
   border-radius: 5px;
-  margin-left: 490px;
+  color: #a7bcb9;
+
+  margin-left: 570px;
+  width: 150px;
+  height: 60px;
+}
+.see-res {
+  color: #a7bcb9;
+  font-size: larger;
 }

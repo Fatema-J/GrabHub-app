@@ -2,35 +2,56 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <script src="https://kit.fontawesome.com/b7ea169c12.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
   </head>
   <body>
     <nav>
-     <ul><img src="/images/rest-cutlery">
-     
-      <% if (user) { %>
-        <li><a href="/restaurants">Restaurants</a></li> 
+      <ul>
+        <img src="/images/rest-cutlery" />
 
-        <li><a href="/receipt">Order History</a></li>
-        <li><a href="/baskets"><img class="bskt" src="images/shopping-cart-svgrepo-com" alt="Basket"></a></li>
-        
-        <li style="float:right"><a href="/logout">LOG OUT</a></li>
-       
+        <% if (user) { %>
+        <li><a href="/restaurants">Restaurants</a></li>
+
+        <li><a href="/reciept">Order History</a></li>
+        <li>
+          <a href="/baskets"
+            ><img
+              class="bskt"
+              src="images/shopping-cart-svgrepo-com"
+              alt="Basket"
+          /></a>
+        </li>
+
+        <li style="float: right"><a href="/logout">LOG OUT</a></li>
 
 
         <a href="/restaurants">Restaurants</a>
+        <a href="/baskets"
+          ><img
+            class="bskt"
+            src="images/shopping-cart-svgrepo-com"
+            alt="Basket"
+        /></a>
+
         <a href="/reciept">Order History</a>
         <a href="/baskets"><i class="fa-solid fa-basket-shopping"></i></a>
         <a href="/logout">LOG OUT</a>
-       
 
-      <% } else { %>
-        <li style="float:right"><a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a></li>
-      <% } %>
-    </ul>
- 
+        <% } else { %>
+        <li style="float: right">
+          <a href="/auth/google" class="login"
+            >LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"
+          /></a>
+        </li>
+        <% } %>
+      </ul>
     </nav>
     <i class="fa-solid fa-cart-shopping"></i>
-    <h1><%=title%></h1>
+  </body>
+</html>

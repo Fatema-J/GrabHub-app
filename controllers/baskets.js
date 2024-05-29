@@ -1,15 +1,16 @@
 const Basket = require('../models/basket')
 const Dish = require('../models/dish')
-const receiptCtrl = require('../controllers/receipt')
+const recieptCtrl = require('../controllers/reciept')
+
 
 
 const add = async (req, res) => {
   const basket = await Basket.find({})
-  res.render('basket/add',
+  res.render('basket/add'),
     {
       title: 'Basket',
       basket
-    })
+    }
 }
 
 //order payment function that will clear basket upon successful payment
@@ -19,12 +20,11 @@ async function payOrder(req, res) {
   console.log('User:', req.user)
 
   try {
-    
-    receiptId = receiptCtrl.create(req.body.totalAmount, req.user.basket, req.user)
-    
-    await Basket.findByIdAndUpdate(req.user.basket, {$set: {orderedItems: [] }})
-    res.render('paymentSuccess', {receiptId})
 
+    receiptId = await recieptCtrl.create(req.body.totalAmount, req.user.basket, req.user)
+
+    await Basket.findByIdAndUpdate(req.user.basket, {$set: {orderedItems: [] }})
+    res.render('paymentSuccess')
   } catch (error){
     console.error(error); 
     res.status(500).send('Internal Server Error')

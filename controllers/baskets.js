@@ -25,7 +25,8 @@ async function payOrder(req, res) {
   "Your order is in the kitchen. It’ll be out to you soon.",
   "We’ve got your order! Thank you for your patience as we prepare it.",
   "Your meal is being prepared with care. Thank you for your order!"]
-  phrase = phrases
+  let randomInt = Math.floor(Math.random() * phrases.length)
+  const phrase = phrases[randomInt]
   try {
     receiptId = receiptCtrl.create(
       req.body.totalAmount,
@@ -36,7 +37,7 @@ async function payOrder(req, res) {
     await Basket.findByIdAndUpdate(req.user.basket, {
       $set: { orderedItems: [] }
     })
-    res.render('paymentSuccess', { receiptId , user: req.user})
+    res.render('paymentSuccess', { receiptId , user: req.user, phrase})
   } catch (error) {
     console.error(error)
     res.status(500).send('Internal Server Error')

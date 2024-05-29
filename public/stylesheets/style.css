@@ -2,6 +2,7 @@ body {
   padding-bottom: 2rem;
   font: 14px "Libre Baskerville", serif;
   background-color: #a7bcb9;
+  color: #24527a;
 }
 
 .details {
@@ -86,15 +87,32 @@ li a:hover {
 }
 
 .logo {
-  width: 350px;
-  height: 300px;
-  margin-left: 490px;
+  width: 370px;
+  height: 320px;
+  margin-left: 450px;
 }
 
 .res-enter {
   background-color: #24527a;
   border-radius: 5px;
-  margin-left: 490px;
+  color: #a7bcb9;
+  border: none;
+  margin-left: 570px;
+  width: 150px;
+  height: 60px;
+  cursor: pointer;
+}
+.see-res {
+  color: #a7bcb9;
+  font-size: larger;
+  text-decoration: none;
+}
+.home-phrase {
+  margin-left: 450px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding-top: 30px;
+  font-size: x-large;
+  font-weight: bold;
 }
 
 

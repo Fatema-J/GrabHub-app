@@ -42,14 +42,18 @@ const update = async (req, res) => {
 async function deleteItem(req, res) {
   // /baskets/:basketsId/ordered-item/:itemId
   console.log('??????????????????????')
-  const basket = await Basket.findOne({
-    'orderedItems._id': req.params.basketsId
-  })
-  if (!basket) return res.redirect('/baskets')
-  basket.orderedItems.remove(req.params.itemId)
+  console.log('basket id:', req.params.basketsId)
+  const basket = await Basket.updateOne(
+    { _id: req.params.basketsId },
+    { $pull: { orderedItems: { _id: req.params.itemId } } }
+  )
 
-  await basket.save()
-  res.redirect(`/baskets/${basket._id}`)
+  console.log('result', basket)
+  if (!basket) return res.redirect('/baskets')
+  // basket.orderedItems.remove(req.params.itemId)
+
+  // await basket.save()
+  res.redirect(`/baskets`)
 }
 module.exports = {
   create,

@@ -6,9 +6,13 @@ var logger = require('morgan')
 var session = require('express-session')
 var passport = require('passport')
 var methodOverride = require('method-override')
+var session = require('express-session')
+var passport = require('passport')
+var methodOverride = require('method-override')
 
 require('dotenv').config()
 require('./config/database')
+require('./config/passport')
 require('./config/passport')
 
 var indexRouter = require('./routes/index')
@@ -16,7 +20,7 @@ var usersRouter = require('./routes/users')
 var restaurantsRouter = require('./routes/restaurants')
 var basketsRouter = require('./routes/baskets')
 const orderedItemsRouter = require('./routes/ordered-item')
-var recieptRouter = require('./routes/reciept')
+var receiptRouter = require('./routes/receipt')
 var app = express()
 
 // view engine setup
@@ -24,12 +28,22 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 app.use(methodOverride('_method'))
+app.use(methodOverride('_method'))
 
 app.use(logger('dev'))
 app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(
+  session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: true
+  })
+)
+app.use(passport.initialize())
+app.use(passport.session())
 app.use(
   session({
     secret: process.env.SECRET,
@@ -50,7 +64,7 @@ app.use('/users', usersRouter)
 app.use('/restaurants', restaurantsRouter)
 app.use('/baskets', basketsRouter)
 app.use('/', orderedItemsRouter)
-app.use('/reciept', recieptRouter)
+app.use('/receipt', receiptRouter)
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(methodOverride('_method'))
 // catch 404 and forward to error handler

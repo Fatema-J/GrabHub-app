@@ -1,0 +1,10 @@
+<%- include('../partials/header')%>
+
+    <ul>
+        <% receipts.forEach(receipt => { %>
+            <li><a href="/receipt/<%= receipt._id %>">receipt <%= receipt._id %></a></li>
+        <% }); %>
+    </ul>
+</div>
+
+<%- include('../partials/footer')%>

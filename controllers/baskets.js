@@ -1,12 +1,15 @@
 const Basket = require('../models/basket')
 const Dish = require('../models/dish')
+const receiptCtrl = require('../controllers/receipt')
+
+
 const add = async (req, res) => {
   const basket = await Basket.find({})
-  res.render('basket/add'),
+  res.render('basket/add',
     {
       title: 'Basket',
       basket
-    }
+    })
 }
 
 //order payment function that will clear basket upon successful payment
@@ -16,12 +19,14 @@ async function payOrder(req, res) {
   console.log('User:', req.user)
 
   try {
-    await Basket.findByIdAndUpdate(req.user.basket, {
-      $set: { orderedItems: [] }
-    })
-    res.render('paymentSuccess')
-  } catch (error) {
-    console.error(error)
+    
+    receiptId = receiptCtrl.create(req.body.totalAmount, req.user.basket, req.user)
+    
+    await Basket.findByIdAndUpdate(req.user.basket, {$set: {orderedItems: [] }})
+    res.render('paymentSuccess', {receiptId})
+
+  } catch (error){
+    console.error(error); 
     res.status(500).send('Internal Server Error')
   }
 }
@@ -38,9 +43,12 @@ async function deleteBasket(req, res) {
     console.log(err)
   }
 }
+
+
 const show = async (req, res) => {
   try {
-    const baskets = await Basket.findById('6654314fe9c6c5b6fea3d9a1')
+    
+    const baskets = await Basket.findById(req.user.basket)
 
     // Use Promise.all to wait for all promises to resolve
     //it returned an array of promises before using it

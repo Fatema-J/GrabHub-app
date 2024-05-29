@@ -13,9 +13,7 @@ passport.use(new GoogleStrategy(
     // Let's use async/await!
     async function(accessToken, refreshToken, profile, cb) {
       // A user has logged in with OAuth...
-      let basket = await Basket.create({orderedItems: [],
-        userName: '',
-        userAvatar: ''})
+      
       
       try {
         // A user has logged in with OAuth...
@@ -23,6 +21,10 @@ passport.use(new GoogleStrategy(
         // Existing user found, so provide it to passport
         if (user) return cb(null, user);
         // We have a new user via OAuth!
+        let basket = await Basket.create({orderedItems: [],
+          userName: '',
+          userAvatar: ''})
+          
         user = await User.create({
           name: profile.displayName,
           googleId: profile.id,

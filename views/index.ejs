@@ -1,6 +1,22 @@
 <%- include('./partials/header') %>
 
-<p>Welcome to <%= title %></p>
-<a href="/restaurants">See All Restaurants</a>
-<a href="/baskets">basket</a>
+<<!-- index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to <%= title %></title>
+    <link rel="stylesheet" href="/styles/styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to <%= title %></h1>
+        <a href="/restaurants">See All Restaurants</a>
+        <a href="/baskets">basket</a>
+    </div>
+</body>
+</html>
+
 <%- include('./partials/footer') %>

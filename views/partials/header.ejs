@@ -1,23 +1,25 @@
 <!DOCTYPE html>
+<link rel='stylesheet' href='public/stylesheets/style.css' />
+
 <html>
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <nav>
-     
-      <img src="/images/rest-cutlery">
-     
-      <% if (user) { %>
-       
-        <a href="/restaurants">Restaurants</a>
-        <a href="/baskets"><img class="bskt" src="images/shopping-cart-svgrepo-com" alt="Basket"></a>
-        <a href="/reciept">Order History</a>
-        <a href="/logout">LOG OUT</a>
-       
-      <% } else { %>
-        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-      <% } %>
+    <nav class="navbar">
+      <div class="container">
+        <img src="" class="logo" alt="Restaurant Logo">
+        <ul class="nav-links">
+          <% if (user) { %>
+            <li><a href="/restaurants">Restaurants</a></li>
+            <li><a href="/baskets"><img class="basket-icon" src="images/shopping-cart-svgrepo-com" alt="Basket"></a></li>
+            <li><a href="/reciept">Order History</a></li>
+            <li><a href="/logout">LOG OUT</a></li>
+          <% } else { %>
+            <li><a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" class="login-icon"></a></li>
+          <% } %>
+        </ul>
+      </div>
     </nav>
     <h1><%=title%></h1>

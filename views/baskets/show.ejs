@@ -35,8 +35,6 @@
 
         <button type="submit">Update</button>
       </form>
-      <!-- <input type="submit" value="+" />
-      <input type="submit" value="-" /> -->
   <%} %>
 </section>
 
@@ -46,14 +44,15 @@
   </div>
 
   <form action="/baskets/payOrder" method="POST">
+    <input type="hidden" name="totalAmount", value="<%=totalAmount%>">
     <button type="submit">Proceed to Pay</button>
   </form>
 
-  
+<!--   
   <div id="paymentMessage" style="display: none;">
     <p>Thanks for payment!</p>
-    <a href="/reciept">View Receipt</a>
-  </div>
+    <a href="/receipt">View Receipt</a>
+  </div> -->
   </body>
   <% } else { %> 
     <p>Please sign in to view your basket</p> <% } %>

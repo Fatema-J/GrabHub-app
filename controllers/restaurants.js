@@ -20,11 +20,6 @@ const show = async (req, res) => {
 
   const basket = await Basket.findById(req.user.basket)
 
-  // const allCategories = restaurant.menu.map((dish) => dish.category)
-  // //keep distinct categories only
-  // const categories = Array.from(new Set(allCategories))
-  // const dishes = restaurant.menu
-
   res.render('restaurants/show', {
     title: restaurant.name,
     restaurant,

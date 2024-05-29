@@ -1,10 +1,10 @@
 <%- include('../partials/header')%>
  
-<p><strong>reciept ID:</strong> <%=reciept._id %></p>
-<p><strong>Total Amount:</strong> <%=reciept.totalAmount %></p>
+<p><strong>receipt ID:</strong> <%=receipt._id %></p>
+<p><strong>Total Amount:</strong> <%=receipt.totalAmount %></p>
 <h2>Ordered dishes:</h2>
 <ul>
-    <%reciept.orderedDishes.forEach(dish => { %>
+    <%receipt.orderedDishes.forEach(dish => { %>
         <li>Name: <%= dish.name %>, Price: <%= dish.price %>, Quantity: <%= dish.quantity %></li>
     <% }); %>
 </ul>

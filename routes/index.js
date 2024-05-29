@@ -3,8 +3,22 @@ var router = express.Router();
 const passport = require('passport');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Restaurants App' });
+router.get('/', function(req, res) {
+  const dateTimeObject = new Date();
+  Hour = dateTimeObject.getHours()
+  Min = dateTimeObject.getMinutes()
+
+  let meal;
+  if (Hour>=5 && Hour<11){
+   meal = 'Breakfast'
+  } else if(Hour>=11 && Hour<18){
+    meal = 'Launch'
+  } else{
+    meal = 'Dinner'
+  }
+
+  const phrase = `Hello! it's ${Hour}:${Min}, You May Pick Your ${meal}`
+  res.render('index', { title: 'Restaurants App',  phrase});
 });
 
 // Google OAuth login route

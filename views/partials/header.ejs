@@ -3,17 +3,18 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://kit.fontawesome.com/b7ea169c12.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <nav>
-     
+
       <img src="/images/rest-cutlery">
-     
+
       <% if (user) { %>
-       
+
         <a href="/restaurants">Restaurants</a>
-        <a href="/baskets"><img class="bskt" src="images/shopping-cart-svgrepo-com" alt="Basket"></a>
         <a href="/reciept">Order History</a>
+        <a href="/baskets"><i class="fa-solid fa-basket-shopping"></i></a>
         <a href="/logout">LOG OUT</a>
        
       <% } else { %>

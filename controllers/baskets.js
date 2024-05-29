@@ -1,16 +1,13 @@
 const Basket = require('../models/basket')
 const Dish = require('../models/dish')
-const recieptCtrl = require('../controllers/reciept')
-
-
+const receiptCtrl = require('../controllers/reciept')
 
 const add = async (req, res) => {
   const basket = await Basket.find({})
-  res.render('basket/add'),
-    {
-      title: 'Basket',
-      basket
-    }
+  res.render('basket/add', {
+    title: 'Basket',
+    basket
+  })
 }
 
 //order payment function that will clear basket upon successful payment
@@ -20,13 +17,18 @@ async function payOrder(req, res) {
   console.log('User:', req.user)
 
   try {
+    receiptId = receiptCtrl.create(
+      req.body.totalAmount,
+      req.user.basket,
+      req.user
+    )
 
-    receiptId = await recieptCtrl.create(req.body.totalAmount, req.user.basket, req.user)
-
-    await Basket.findByIdAndUpdate(req.user.basket, {$set: {orderedItems: [] }})
-    res.render('paymentSuccess')
-  } catch (error){
-    console.error(error); 
+    await Basket.findByIdAndUpdate(req.user.basket, {
+      $set: { orderedItems: [] }
+    })
+    res.render('paymentSuccess', { receiptId })
+  } catch (error) {
+    console.error(error)
     res.status(500).send('Internal Server Error')
   }
 }
@@ -44,12 +46,10 @@ async function deleteBasket(req, res) {
   }
 }
 
-
 const show = async (req, res) => {
   try {
-    
     const baskets = await Basket.findById(req.user.basket)
- console.log(baskets)
+
     // Use Promise.all to wait for all promises to resolve
     //it returned an array of promises before using it
     // source: https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop

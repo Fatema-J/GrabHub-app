@@ -1,4 +1,5 @@
-const Reciept = require('../models/reciept')
+const { createSearchIndex } = require('../models/dish')
+const { Reciept } = require('../models/reciept')
 
 async function index(req, res) {
   console.log(req.user)
@@ -37,4 +38,3 @@ module.exports = {
   show,
   create
 }
-

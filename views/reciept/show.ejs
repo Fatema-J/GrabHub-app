@@ -1,8 +1,13 @@
 <%- include('../partials/header')%>
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> 0ebbe03e47752d97c4c155c58feaeee0508fcc43
 <p><strong>reciept ID:</strong> <%=reciept._id %></p>
 <p><strong>Total Amount:</strong> <%=reciept.totalAmount %></p>
 <h2>Ordered dishes:</h2>
 <ul>
+<<<<<<< HEAD
   <%reciept.orderedDishes.forEach(dish => { %>
   <li>
     Name: <%= dish.name %>, Price: <%= dish.price %>, Quantity: <%=
@@ -11,3 +16,10 @@
   <% }); %>
 </ul>
 <%- include('../partials/footer')%>
+=======
+    <%reciept.orderedDishes.forEach(dish => { %>
+        <li>Name: <%= dish.name %>, Price: <%= dish.price %>, Quantity: <%= dish.quantity %></li>
+    <% }); %>
+</ul>
+<%- include('../partials/footer')%>
+>>>>>>> 0ebbe03e47752d97c4c155c58feaeee0508fcc43

@@ -60,6 +60,7 @@ async function deleteBasket(req, res) {
 const show = async (req, res) => {
   try {
     const baskets = await Basket.findById(req.user.basket)
+
     // Use Promise.all to wait for all promises to resolve
     //it returned an array of promises before using it
     // source: https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop

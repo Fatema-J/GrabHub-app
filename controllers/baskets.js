@@ -1,6 +1,6 @@
 const Basket = require('../models/basket')
 const Dish = require('../models/dish')
-
+const recieptCtrl = require('../controllers/reciept')
 
 
 
@@ -20,6 +20,9 @@ async function payOrder(req, res) {
   console.log('User:', req.user)
 
   try {
+
+    receiptId = await recieptCtrl.create(req.body.totalAmount, req.user.basket, req.user)
+
     await Basket.findByIdAndUpdate(req.user.basket, {$set: {orderedItems: [] }})
     res.render('paymentSuccess')
   } catch (error){

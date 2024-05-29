@@ -17,6 +17,7 @@ const Schema = mongoose.Schema
 
 const restaurantSchema = new Schema({
   name: String,
+  image: string, 
   location: String,
   menu: [{ type: Schema.Types.ObjectId, ref: 'Dish' }]
 

@@ -46,6 +46,7 @@
   </div>
 
   <form action="/baskets/payOrder" method="POST">
+    <input type="hidden" name="totalAmount", value="<%=totalAmount%>">
     <button type="submit">Proceed to Pay</button>
   </form>
 

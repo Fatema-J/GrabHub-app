@@ -15,7 +15,17 @@ const add = async (req, res) => {
 async function payOrder(req, res) {
   console.log('payOrder controller hit')
   console.log('User:', req.user)
-
+  const phrases = ["Thank you for your order! We'll get started on it right away.",
+  "Your order has been received. We'll have it ready for you shortly.",
+  "Thanks for ordering with us! Your meal will be ready soon.",
+  "We appreciate your order. Please sit back and relax while we prepare your meal.",
+  "Your delicious meal is on its way! Thank you for choosing us.",
+  "Order confirmed! We’ll bring your food out as soon as it’s ready.",
+  "Thank you for your order. We’re working on it and will serve it shortly.",
+  "Your order is in the kitchen. It’ll be out to you soon.",
+  "We’ve got your order! Thank you for your patience as we prepare it.",
+  "Your meal is being prepared with care. Thank you for your order!"]
+  phrase = phrases
   try {
     receiptId = receiptCtrl.create(
       req.body.totalAmount,
@@ -26,7 +36,7 @@ async function payOrder(req, res) {
     await Basket.findByIdAndUpdate(req.user.basket, {
       $set: { orderedItems: [] }
     })
-    res.render('paymentSuccess', { receiptId })
+    res.render('paymentSuccess', { receiptId , user: req.user})
   } catch (error) {
     console.error(error)
     res.status(500).send('Internal Server Error')

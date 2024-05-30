@@ -24,7 +24,7 @@ Step into our culinary adventure with our innovative Food Delivery app! Seamless
 
 #### Entity-Relationship Diagram (ERD):
 
-![ERD](./images/erd4.drawio.png)
+![ERD](./images/erdFinal.drawio.png)
 
 #### Wireframes:
 
@@ -60,19 +60,19 @@ The Wire Frame below will guide you on how you will be redirected through our ap
 4. click on "Order Now" button to move your "Yummy" meal to the basket!
 5. Review your order details and payment summary & "Proceed with Payment"
 
-- [ ] Local time shown in first page
-- [ ] List of restaurants
+- [X] Local time shown in first page
+- [X] List of restaurants
 - [X] Each restaurant page contains menu and categories
-- [ ] Multi orders from different restaurants at same time
+- [X] Multi orders from different restaurants at same time
 - [ ] optional comments before confirm order
-- [ ] App contains basket and payment page
+- [X] App contains basket and payment page
 
 ---
 
 ### **_Future Updates_**
 
 - [ ] Admin Dashboard
-- [ ] Branding (Logo, Colors, Fonts)
+- [X] Branding (Logo, Colors, Fonts)
 - [ ] APIs
 - [ ] Additional Toppings
 - [ ] the app will have order tracking map
@@ -80,6 +80,13 @@ The Wire Frame below will guide you on how you will be redirected through our ap
 ---
 
 ### **_Credits_**
+![Express Documentation](https://expressjs.com/en/guide/using-middleware.html)
+![W3Schools](https://www.w3schools.com/)
+![Flaticon](https://www.flaticon.com/)
+![shecodes](https://palettes.shecodes.io/palettes/1475)
+![postimg](https://postimg.cc/)
+![ResizePixel](https://www.resizepixel.com/)
+![logo.com](https://logo.com/)
 
 
 ### **Screenshots**

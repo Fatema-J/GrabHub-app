@@ -12,7 +12,10 @@ const dishSchema = new Schema({
     required: true
   },
   description: String,
-  price: Number
+  price: Number,
+  imageUrl: {
+    type: String,
+    required: true}
 })
 
 module.exports = mongoose.model('Dish', dishSchema)

@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Success</title>
+    <link rel="stylesheet" href="/stylesheets/paymentSuccess.css">
 </head>
 <body>
-    <p><strong>Thanks for Payment !</strong></p>
-    <p>Bon Appétit! <%=user.name%></p>
-    <p><%=phrase%></p>
-    <a href="/reciept/show">Click Here To View Your Receipt</a>
+    <div class="successdiv"> <p><strong>Thanks for Payment !</strong></p>
+        <p>Bon Appétit! <%=user.name%></p>
+        <p><%=phrase%></p>
+        <a href="/reciept/show">Click Here To View Your Receipt</a>
+    </div>
+
 </body>
 </html>

@@ -11,7 +11,9 @@
 <div class="dishes">
   <% if(restaurantMenu){ %>
     <% restaurantMenu.forEach(dish =>{%>
-      <img src="" alt="">
+      <div class="dish">
+      <img src="<%= dish.imageUrl %>" alt="<%=dish.Item%> Image" class="dish-image"/>
+      <div class="dish-details">
       <h3><%=dish.Item%></h3>
       <p class="price">Price: <span><%=dish.price%></span></p>
       <p class="Description">Description <span><%=dish.description%></span></p>
@@ -22,6 +24,9 @@
 
         <button type="submit">Add</button>
       </form>
+    </div>
+  </div>
+  <hr class="dish-separator">
     <%}
     }) %>
     <% } %>

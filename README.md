@@ -80,6 +80,13 @@ The Wire Frame below will guide you on how you will be redirected through our ap
 ---
 
 ### **_Credits_**
+![Express Documentation](https://expressjs.com/en/guide/using-middleware.html)
+![W3Schools](https://www.w3schools.com/)
+![Flaticon](https://www.flaticon.com/)
+![shecodes](https://palettes.shecodes.io/palettes/1475)
+![postimg](https://postimg.cc/)
+![ResizePixel](https://www.resizepixel.com/)
+![logo.com](https://logo.com/)
 
 
 ### **Screenshots**

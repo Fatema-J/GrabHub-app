@@ -3,6 +3,7 @@ body {
   font: 14px "Libre Baskerville", serif;
   background-color: #a7bcb9;
   color: #24527a;
+
 }
 
 .details {
@@ -133,6 +134,81 @@ li a:hover {
   padding: 1rem;
 }
 
+
+.dishes-container {
+  padding: 20px;
+  background-color: #e0ebeb;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dish {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.dish-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.dish-details {
+  flex: 1;
+}
+
+.dish h3 {
+  margin: 0 0 10px;
+  color: #24527a;
+}
+
+.price {
+  margin: 0 0 5px;
+  color: #5dacbd;
+}
+
+.description {
+  margin: 0 0 15px;
+  color: #24527a;
+}
+
+.add-dish-quantity {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-input {
+  width: 60px;
+  margin-right: 10px;
+}
+
+.add-button {
+  padding: 5px 10px;
+  background-color: #5dacbd;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-button:hover {
+  background-color: #24527a;
+}
+
+.dish-separator {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 20px 0;
+=======
 .basket-table tr{
   background-color: #d6dedc;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

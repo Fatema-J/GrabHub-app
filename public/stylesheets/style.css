@@ -2,6 +2,7 @@ body {
   /* padding: 50px; */
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
   background-color: #a7bcb9;
+
 }
 
 .details {
@@ -96,3 +97,4 @@ li a:hover {
   border-radius: 5px;
   margin-left: 490px;
 }
+

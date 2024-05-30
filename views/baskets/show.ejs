@@ -1,62 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
-  <body>
+<%-include('../partials/header')%>
+
+<div class="basket">
     <% if (user) {%>
     <h2>Basket</h2>
     <h3>Order Details</h3>
+    <table class="basket-table">
+      <tr>
+        <th>Dish Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Remove</th>
+      </tr>
     
-
-<section>
   <% for(let i=0 ; i<baskets.orderedItems.length ; i++ ){%>
-      <div class="details">dish details:</div>
-      <div><%= basketdish[i].Item  %></div>
-      <div class="details">category:</div>
-      <div><%=  basketdish[i].category%></div>
-      <div class="details">price:</div>
-      <div><%=  basketdish[i].price%></div>
-
-      <div class="details">comments:</div>
-      <div><%= baskets.orderedItems[i].comments%></div>
-
-      <form class="delete-dish" action="/baskets/<%=baskets._id%>/ordered-item/<%=baskets.orderedItems[i]._id%>?_method=DELETE" method="POST">
-        <button type="submit" >remove</button>
-      </form>
-
-      <form id="update-dish-quantity" action="/baskets/<%=baskets._id%>/ordered-items/<%=baskets.orderedItems[i]._id%>?_method=PUT" method="POST">
-        <div class="details">quantity:</div>
+    <tr>
+      <td><div class="details"><%= basketdish[i].Item  %></div></td>
+      <td><div class="details"><%=  basketdish[i].price%> BHD</div></td>
+      <td> <form id="update-dish-quantity" action="/baskets/<%=baskets._id%>/ordered-items/<%=baskets.orderedItems[i]._id%>?_method=PUT" method="POST">
         <input type="hidden" name="dish" value="<%= baskets.orderedItems[i]._id %>">
         <input type="number" name="quantity" value="<%= baskets.orderedItems[i].quantity %>" min="0">
+        <button class="basket-btn"  type="submit">Update</button>
+      </form></td>
+      <td><form class="delete-dish" action="/baskets/<%=baskets._id%>/ordered-item/<%=baskets.orderedItems[i]._id%>?_method=DELETE" method="POST">
+        <button class="basket-btn"  type="submit" ><i class="fa-solid fa-trash"></i></button>
+      </form></td>
+    </tr>
 
-        <button type="submit">Update</button>
-      </form>
-      <!-- <input type="submit" value="+" />
-      <input type="submit" value="-" /> -->
   <%} %>
-</section>
+</table>
 
 
-<h3>Total price:</h3>
-<div><%= totalAmount %></div>
-  </div>
+<h3>Total price: <strong><%= totalAmount %> BHD</strong></h3>
+
 
   <form action="/baskets/payOrder" method="POST">
     <input type="hidden" name="totalAmount", value="<%=totalAmount%>">
-    <button type="submit">Proceed to Pay</button>
+    <button class="basket-btn" type="submit">Proceed to Pay</button>
   </form>
+</div>
 
-  
-  <div id="paymentMessage" style="display: none;">
-    <p>Thanks for payment!</p>
-    <a href="/receipt">View Receipt</a>
-  </div>
   </body>
   <% } else { %> 
     <p>Please sign in to view your basket</p> <% } %>
-</html>
+<%-include('../partials/footer')%>
 

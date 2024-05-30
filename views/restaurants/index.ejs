@@ -1,39 +1,16 @@
-<%- include('../partials/header')%> 
-<style>
-  .restaurants {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #f9f9f9;
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Align items vertically */
-  }
+<%- include('../partials/header') %>
+<div class="restaurants-container">
+  <% restaurants.forEach(restaurant => { %>
+    <div class="restaurant">
+      <a href="/restaurants/<%= restaurant._id %>">
+        <div class="restaurant-content">
+          <img src="<%= restaurant.image %>" alt="<%= restaurant.name %> Image" class="restaurant-image"/>
+          <h3><%= restaurant.name %></h3>
+          <p><%= restaurant.location %></p>
 
-  .restaurants img {
-    width: 50px; /* Adjust as needed */
-    height: 50px; /* Adjust as needed */
-    margin-right: 10px;
-    border-radius: 50%; /* Ensure the logo is circular */
-  }
-
-  .restaurants a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-  }
-
-  .restaurants a:hover {
-    color: #ff6347; /* Change color on hover */
-  }
-</style>
-
-<% restaurants.forEach(restaurant => { %>
-  <div class="restaurants">
-    <img src="<%= restaurant.logo %>" alt="Restaurant Logo"> <!-- Use the logo property of each restaurant -->
-    <a href="/restaurants/<%= restaurant._id %>"><%= restaurant.name %></a>
-  </div>
-<% }); %>
-  
- 
-<%- include('../partials/footer')%>
+        </div>
+      </a>
+    </div>
+  <% }); %>
+</div>
+<%- include('../partials/footer') %>

@@ -1,22 +1,11 @@
 <%- include('./partials/header') %>
+<link rel="stylesheet" href="/stylesheets/style.css" />
 
-<<!-- index.ejs -->
+<img class="logo" src="/images/Grabhub.png" />
+<button class="res-enter">
+  <a class="see-res" href="/restaurants">See All Restaurants</a>
+</button>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to <%= title %></title>
-    <link rel="stylesheet" href="/styles/styles.css"> <!-- Link to your CSS file -->
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome to <%= title %></h1>
-        <a href="/restaurants">See All Restaurants</a>
-        <a href="/baskets">basket</a>
-    </div>
-</body>
-</html>
+<p class="home-phrase"><%=phrase%></p>
 
 <%- include('./partials/footer') %>

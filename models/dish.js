@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
-// optional shortcut to the mongoose.Schema class
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose')
 
-const dishSchema = new Schema ({
+const Schema = mongoose.Schema
+
+const dishSchema = new Schema({
   Item: {
     type: String,
     required: true
@@ -15,5 +15,4 @@ const dishSchema = new Schema ({
   price: Number
 })
 
-// Compile the schema into a model and export it
-module.exports = mongoose.model('Dish', dishSchema);
+module.exports = mongoose.model('Dish', dishSchema)

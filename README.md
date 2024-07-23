@@ -1,12 +1,10 @@
-# restaurants app
-
-## Date : 09/05/2024
+# GrabHub App
 
 ### Group Members:
 
 Fatema Aljonaid | Abeer Majeed | Ghazi Muqbel | Sara Alalawi
 
-### ![alt text](./images/image.png)
+### ![GrabHub](./public/images/Grabhub.png)
 
 ---
 
@@ -22,18 +20,18 @@ Step into our culinary adventure with our innovative Food Delivery app! Seamless
 
 ### **_Design Phase_**
 
+#### Managment of The Workflow
+[Trello Board](https://trello.com/b/TRVA5v78/project)
+
 #### Entity-Relationship Diagram (ERD):
 
 ![ERD](./images/erdFinal.drawio.png)
 
 #### Wireframes:
 
-![Wireframes](./images/appUI.drawio.png)
+![Wireframes](./public/images/appUI.drawio.png)
 
-#### Managment of The Workflow
 
-[See it Here](https://trello.com/b/TRVA5v78/project)
-![Workflow](./images/sprint2.png)
 
 ---
 
@@ -47,18 +45,25 @@ Step into our culinary adventure with our innovative Food Delivery app! Seamless
 
 **_Project Management and Collaboration:_**
 
-- **_Trello:_** Our go-to tool for organizing tasks and managing project workflows.
+- **_Trello:_** Our to-go tool for organizing tasks and managing project workflows.
 - **_Slack:_** The communication platform that kept our team connected and facilitated collaboration.
 
 **_Diagramming and Visualization:_**
 
-The Wire Frame below will guide you on how you will be redirected through our app including from all the features included:
+- **_Drawio:_** The tool used to make the wireframe and ERD. 
 
-1. Navigate to the app URL, you shall view a welcome page with restaurants list. P.S: You can view restaurants only (Not order) when not logged in.
-2. Upon login, you will be redirected to the restaurant of your choice, view and order select from the categorized menu dishes.
+---
+
+### **_Get Started_**
+
+1. Navigate to the app URL, you shall view a welcome page with restaurants list. P.S: You can view restaurants only when not logged in.
+2. Upon login, you will be redirected to the restaurant of your choice, view and order from the categorized menu dishes.
 3. Picked dish picture will be displayed on the right side of the page.
 4. click on "Order Now" button to move your "Yummy" meal to the basket!
 5. Review your order details and payment summary & "Proceed with Payment"
+
+
+**_Features:_**
 
 - [X] Local time shown in first page
 - [X] List of restaurants
@@ -80,15 +85,11 @@ The Wire Frame below will guide you on how you will be redirected through our ap
 ---
 
 ### **_Credits_**
-![Express Documentation](https://expressjs.com/en/guide/using-middleware.html)
-![W3Schools](https://www.w3schools.com/)
-![Flaticon](https://www.flaticon.com/)
-![shecodes](https://palettes.shecodes.io/palettes/1475)
-![postimg](https://postimg.cc/)
-![ResizePixel](https://www.resizepixel.com/)
-![logo.com](https://logo.com/)
+- [Express Documentation](https://expressjs.com/en/guide/using-middleware.html)
+- [W3Schools](https://www.w3schools.com/)
+- [Flaticon](https://www.flaticon.com/)
+- [shecodes](https://palettes.shecodes.io/palettes/1475)
+- [postimg](https://postimg.cc/)
+- [ResizePixel](https://www.resizepixel.com/)
+- [logo.com](https://logo.com/)
 
-
-### **Screenshots**
-
-![erd](images/Rest-App.drawio.png)

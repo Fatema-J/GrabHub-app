@@ -7,12 +7,3 @@ router.get('/:id', recieptCtrl.show)
 router.post('/', recieptCtrl.create)
 
 module.exports = router
-
-var express = require('express')
-var router = express.Router()
-
-router.get('/', recieptCtrl.index)
-router.get('/:id', recieptCtrl.show)
-
-router.post('/', recieptCtrl.create)
-module.exports = router

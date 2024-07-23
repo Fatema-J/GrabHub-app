@@ -92,4 +92,11 @@ Step into our culinary adventure with our innovative Food Delivery app! Seamless
 - [postimg](https://postimg.cc/)
 - [ResizePixel](https://www.resizepixel.com/)
 - [logo.com](https://logo.com/)
+- [Express Documentation](https://expressjs.com/en/guide/using-middleware.html)
+- [W3Schools](https://www.w3schools.com/)
+- [Flaticon](https://www.flaticon.com/)
+- [shecodes](https://palettes.shecodes.io/palettes/1475)
+- [postimg](https://postimg.cc/)
+- [ResizePixel](https://www.resizepixel.com/)
+- [logo.com](https://logo.com/)
 

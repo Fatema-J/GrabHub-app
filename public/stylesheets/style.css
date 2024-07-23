@@ -2,7 +2,7 @@ body {
   padding-bottom: 2rem;
   font: 14px "Libre Baskerville", serif;
   background-color: #a7bcb9;
-  color: #24527a;
+  color: #000000;
 
 }
 
@@ -87,10 +87,15 @@ li a:hover {
   color: #666;
 }
 
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .logo {
   width: 370px;
   height: 320px;
-  margin-left: 450px;
 }
 
 .res-enter {
@@ -98,7 +103,6 @@ li a:hover {
   border-radius: 5px;
   color: #a7bcb9;
   border: none;
-  margin-left: 570px;
   width: 150px;
   height: 60px;
   cursor: pointer;
@@ -109,7 +113,6 @@ li a:hover {
   text-decoration: none;
 }
 .home-phrase {
-  margin-left: 450px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   padding-top: 30px;
   font-size: x-large;
@@ -208,7 +211,8 @@ li a:hover {
   height: 1px;
   background: #ccc;
   margin: 20px 0;
-=======
+}
+
 .basket-table tr{
   background-color: #d6dedc;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
